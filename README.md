@@ -162,12 +162,12 @@ Language composition across all repositories:
   <picture style="max-width: 49%;">
     <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zelhajou&theme=github_dark">
     <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zelhajou&theme=github">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zelhajou&theme=github" width="300">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zelhajou&theme=github" width="400">
   </picture>
   <picture style="max-width: 49%;">
     <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zelhajou&theme=github_dark">
     <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zelhajou&theme=github">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zelhajou&theme=github" width="300">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zelhajou&theme=github" width="400">
   </picture>
 </div>
 
