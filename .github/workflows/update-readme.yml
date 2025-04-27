@@ -73,8 +73,9 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          # First pull latest changes
+          git pull origin main
+          # Then stage, commit and push changes
           git add README.md
-          # Pull latest changes with rebase strategy before pushing
-          git pull --rebase origin main
           git commit -m "Auto-update README.md with latest repository information"
-          git push
+          git push origin main
