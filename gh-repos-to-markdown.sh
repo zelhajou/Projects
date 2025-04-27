@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ssh-keygen -t ed25519 -f ./github_actions_key -N ""
+
+
 # Safe division function to prevent divide by zero errors
 safe_division() {
   local numerator=$1
@@ -9,7 +12,7 @@ safe_division() {
   if [ "$denominator" -eq 0 ]; then
     echo "$default_value"
   else
-    echo "scale=1; $numerator / $denominator" | bc
+    echo "scale=1; ($numerator / $denominator)" | bc
   fi
 }
 
@@ -86,7 +89,7 @@ echo "Fetching repository data..."
 # Get list of repos with createdAt field included
 gh repo list --limit 1000 --json name,description,isPrivate,stargazerCount,forkCount,updatedAt,createdAt,diskUsage > /tmp/repo_data.json
 
-# Initialize statistics
+# Save statistics data for later use
 PUBLIC_COUNT=0
 TOTAL_STARS=0
 TOTAL_FORKS=0
@@ -97,9 +100,6 @@ MOST_FORKED=""
 MOST_FORKED_COUNT=0
 
 # Process JSON data, create a temporary file for sorting
-rm -f /tmp/repo_entries.txt /tmp/repo_stats_temp.txt /tmp/contributors.txt
-
-# Process each repository and handle statistics separately to avoid subshell issues
 jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   # Extract repository name
   repo_name=$(echo "$repo_entry" | jq -r '.name')
@@ -127,10 +127,24 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   if [ "$is_private" = "true" ]; then
     continue
   fi
-  
-  # Write repository stats to temp file to avoid subshell variable loss
-  echo "$repo_name|$stars|$forks|$size" >> /tmp/repo_stats_temp.txt
 
+  # Track statistics for public repositories
+  PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
+  TOTAL_STARS=$((TOTAL_STARS + stars))
+  TOTAL_FORKS=$((TOTAL_FORKS + forks))
+  TOTAL_SIZE=$((TOTAL_SIZE + size))
+  
+  # Track most starred and forked repos
+  if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
+    MOST_STARRED="$repo_name"
+    MOST_STARRED_COUNT=$stars
+  fi
+  
+  if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
+    MOST_FORKED="$repo_name"
+    MOST_FORKED_COUNT=$forks
+  fi
+  
   # Handle missing values
   description=${description:-"*No description*"}
   stars=${stars:-0}
@@ -168,45 +182,8 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   gh api repos/$USERNAME/$repo_name/languages >> /tmp/repo_languages_$repo_name.json
 done
 
-# Now process the collected statistics from temp file
-echo "Calculating repository statistics..."
-
-# Count public repositories
-PUBLIC_COUNT=$(cat /tmp/repo_stats_temp.txt | wc -l)
-
-# Calculate totals from the temp file
-while IFS='|' read -r repo stars forks size; do
-  # Add stars if numeric
-  if [[ "$stars" =~ ^[0-9]+$ ]]; then
-    TOTAL_STARS=$((TOTAL_STARS + stars))
-    
-    # Check for most starred
-    if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
-      MOST_STARRED="$repo"
-      MOST_STARRED_COUNT=$stars
-    fi
-  fi
-  
-  # Add forks if numeric
-  if [[ "$forks" =~ ^[0-9]+$ ]]; then
-    TOTAL_FORKS=$((TOTAL_FORKS + forks))
-    
-    # Check for most forked
-    if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
-      MOST_FORKED="$repo"
-      MOST_FORKED_COUNT=$forks
-    fi
-  fi
-  
-  # Add size if numeric
-  if [[ "$size" =~ ^[0-9]+$ ]]; then
-    TOTAL_SIZE=$((TOTAL_SIZE + size))
-  fi
-done < /tmp/repo_stats_temp.txt
-
-# Save stats to verify they're correct
-echo "Public Repos: $PUBLIC_COUNT, Stars: $TOTAL_STARS, Forks: $TOTAL_FORKS, Size: $TOTAL_SIZE" > /tmp/final_stats.txt
-echo "Most Starred: $MOST_STARRED with $MOST_STARRED_COUNT stars, Most Forked: $MOST_FORKED with $MOST_FORKED_COUNT forks" >> /tmp/final_stats.txt
+# Save stats at once after all repos are processed
+echo "$PUBLIC_COUNT $TOTAL_STARS $TOTAL_FORKS $TOTAL_SIZE $MOST_STARRED $MOST_STARRED_COUNT $MOST_FORKED $MOST_FORKED_COUNT" > /tmp/repo_stats.txt
 
 # Sort by creation date in reverse order (newest first) and append to markdown
 if [ -f /tmp/repo_entries.txt ]; then
@@ -234,6 +211,16 @@ if [ -f /tmp/repo_entries.txt ]; then
   done
 fi
 
+# Create summary card at the top
+echo "" >> "$OUTPUT_FILE"
+echo "## Repository Statistics" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+# Read the calculated statistics
+if [ -f /tmp/repo_stats.txt ]; then
+  read PUBLIC_COUNT TOTAL_STARS TOTAL_FORKS TOTAL_SIZE MOST_STARRED MOST_STARRED_COUNT MOST_FORKED MOST_FORKED_COUNT < /tmp/repo_stats.txt
+fi
+
 # Count all repositories for total
 TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
 PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
@@ -246,11 +233,6 @@ elif [ "$TOTAL_SIZE" -gt 1000 ]; then
 else
   TOTAL_SIZE_DISPLAY="$TOTAL_SIZE KB"
 fi
-
-# Create summary card at the top
-echo "" >> "$OUTPUT_FILE"
-echo "## Repository Statistics" >> "$OUTPUT_FILE"
-echo "" >> "$OUTPUT_FILE"
 
 # Create summary cards with emojis - with adaptive theming
 cat >> "$OUTPUT_FILE" << EOF
@@ -399,9 +381,7 @@ if [ -f /tmp/all_languages.txt ]; then
         PERCENTAGE="0.0"
         BAR=""
       else
-        # Fix: First calculate the percentage value, then pass it to safe_division
-        percentage_value=$(( count * 100 ))
-        PERCENTAGE=$(safe_division "$percentage_value" "$TOTAL_REPOS")
+        PERCENTAGE=$(safe_division "($count * 100)" "$TOTAL_REPOS")
         BAR=$(generate_bar "$PERCENTAGE")
       fi
       
@@ -473,8 +453,9 @@ echo -e "</div>\n" >> "$OUTPUT_FILE"
 
 echo -e "\n<div align=\"center\"><small>Last updated: $(date '+%B %d, %Y')</small></div>" >> "$OUTPUT_FILE"
 
+
 # Clean up temporary files
-rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats_temp.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
+rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
 rm -f /tmp/repo_languages_*
 
 echo "README generation complete! Output saved to $OUTPUT_FILE"
