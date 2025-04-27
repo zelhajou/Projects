@@ -73,9 +73,18 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          # First pull latest changes
-          git pull origin main
-          # Then stage, commit and push changes
+          
+          # Create a temporary backup of our generated README.md
+          cp README.md README.md.new
+          
+          # Reset local changes to match remote
+          git fetch origin main
+          git reset --hard origin/main
+          
+          # Copy our newly generated README back
+          cp README.md.new README.md
+          
+          # Stage, commit and push changes
           git add README.md
           git commit -m "Auto-update README.md with latest repository information"
           git push origin main
