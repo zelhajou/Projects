@@ -7,18 +7,27 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
-# Add permissions to allow the default GITHUB_TOKEN to push changes
-permissions:
-  contents: write
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
+      - name: Generate SSH key pair
+        run: ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "github-actions" -N ""
+      
+      - name: Display public key for deploy key setup
+        run: |
+          echo "::notice::Add this deploy key to your repository with write access:"
+          cat ~/.ssh/id_ed25519.pub
+          echo "If you haven't set up a deploy key yet, this action will fail. Follow instructions above."
+      
+      - name: Checkout repository via SSH
         uses: actions/checkout@v4
-        
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          # Fetch all history for all branches and tags
+          fetch-depth: 0
+      
       - name: Set up GitHub CLI
         run: |
           type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -35,8 +44,7 @@ jobs:
       
       - name: Authenticate GitHub CLI
         run: |
-          # Use the default token provided by GitHub Actions
-          echo "${{ github.token }}" > ./token.txt
+          echo "${{ secrets.GH_TOKEN }}" > ./token.txt
           gh auth login --with-token < ./token.txt
           rm ./token.txt
       
@@ -60,11 +68,14 @@ jobs:
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           fi
       
-      - name: Commit and push changes
+      - name: Push changes via SSH
         if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          # First pull latest changes
+          git pull origin main
+          # Then stage, commit and push changes
           git add README.md
           git commit -m "Auto-update README.md with latest repository information"
-          git push
+          git push origin main
