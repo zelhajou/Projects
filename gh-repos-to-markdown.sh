@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ssh-keygen -t ed25519 -f ./github_actions_key -N ""
+
+
 # Safe division function to prevent divide by zero errors
 safe_division() {
   local numerator=$1
