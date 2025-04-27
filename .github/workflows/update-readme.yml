@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Use the PAT for checkout with write access
+          token: ${{ secrets.PAT_TOKEN }}
         
       - name: Set up GitHub CLI
         run: |
@@ -31,7 +34,7 @@ jobs:
       
       - name: Authenticate GitHub CLI
         run: |
-          echo "${{ secrets.GH_TOKEN }}" > ./token.txt
+          echo "${{ secrets.PAT_TOKEN }}" > ./token.txt
           gh auth login --with-token < ./token.txt
           rm ./token.txt
       
@@ -69,4 +72,6 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add README.md
           git commit -m "Auto-update README.md with latest repository information"
-          git push
+          
+          # Use the PAT to push changes
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
