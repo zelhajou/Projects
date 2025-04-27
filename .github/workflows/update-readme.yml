@@ -7,7 +7,7 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
-# Add permissions for the GITHUB_TOKEN
+# Add permissions to allow the default GITHUB_TOKEN to push changes
 permissions:
   contents: write
 
@@ -34,32 +34,17 @@ jobs:
           sudo apt-get install -y bc jq
       
       - name: Authenticate GitHub CLI
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "$GITHUB_TOKEN" > ./token.txt
+          # Use the default token provided by GitHub Actions
+          echo "${{ github.token }}" > ./token.txt
           gh auth login --with-token < ./token.txt
           rm ./token.txt
       
       - name: Make script executable
         run: chmod +x ./gh-repos-to-markdown.sh
       
-      - name: Set username environment variable
-        run: |
-          # Hardcode your username here - this avoids API permission issues
-          echo "GITHUB_USERNAME=zelhajou" >> $GITHUB_ENV
-      
-      - name: Run repository markdown generator with environment variable
-        env:
-          GITHUB_USERNAME: ${{ env.GITHUB_USERNAME }}
+      - name: Run repository markdown generator
         run: ./gh-repos-to-markdown.sh
-      
-      - name: Display debug stats
-        run: |
-          if [ -f /tmp/final_stats.txt ]; then
-            echo "Stats calculated:"
-            cat /tmp/final_stats.txt
-          fi
       
       - name: Rename output file to README.md
         run: mv github_repositories_complete.md README.md
