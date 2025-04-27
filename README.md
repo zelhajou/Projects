@@ -194,5 +194,3 @@ Language composition across all repositories:
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/zelhajou) 
 </div>
 
-
-<div align="center">Generated using <a href="https://github.com/zelhajou/projects">GitHub Repository Markdown Generator</a> on Sun Apr 27 01:16:36 UTC 2025</div>
