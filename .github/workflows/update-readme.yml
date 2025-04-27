@@ -7,24 +7,17 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+# This is crucial - it gives the GITHUB_TOKEN permission to write to the repository
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Generate SSH key pair
-        run: ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "github-actions" -N ""
-      
-      - name: Display public key for deploy key setup
-        run: |
-          echo "::notice::Add this deploy key to your repository with write access:"
-          cat ~/.ssh/id_ed25519.pub
-          echo "If you haven't set up a deploy key yet, this action will fail. Follow instructions above."
-      
-      - name: Checkout repository via SSH
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
       
       - name: Set up GitHub CLI
         run: |
@@ -41,10 +34,7 @@ jobs:
           sudo apt-get install -y bc jq
       
       - name: Authenticate GitHub CLI
-        run: |
-          echo "${{ secrets.GH_TOKEN }}" > ./token.txt
-          gh auth login --with-token < ./token.txt
-          rm ./token.txt
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
       
       - name: Make script executable
         run: chmod +x ./gh-repos-to-markdown.sh
@@ -55,22 +45,8 @@ jobs:
       - name: Rename output file to README.md
         run: mv github_repositories_complete.md README.md
       
-      - name: Check for changes
-        id: check_changes
-        run: |
-          if git diff --quiet README.md; then
-            echo "No changes to commit"
-            echo "changes_detected=false" >> $GITHUB_OUTPUT
-          else
-            echo "Changes detected in README.md"
-            echo "changes_detected=true" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Push changes via SSH
-        if: steps.check_changes.outputs.changes_detected == 'true'
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add README.md
-          git commit -m "Auto-update README.md with latest repository information"
-          git push
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update README.md with latest repository information"
+          file_pattern: "README.md"
