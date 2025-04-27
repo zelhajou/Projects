@@ -295,7 +295,11 @@ if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
   echo "- 🎂 **GitHub account age:** Approximately $ACCOUNT_AGE years (created on $ACCOUNT_CREATED)" >> "$OUTPUT_FILE"
   
   # Calculate average repositories per year
-  REPOS_PER_YEAR=$(echo "scale=1; $PUBLIC_COUNT / $ACCOUNT_AGE" | bc)
+  if [ "$ACCOUNT_AGE" -eq 0 ]; then
+    REPOS_PER_YEAR="$PUBLIC_COUNT (account created this year)"
+  else
+    REPOS_PER_YEAR=$(echo "scale=1; $PUBLIC_COUNT / $ACCOUNT_AGE" | bc)
+  fi
   echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
 fi
 
@@ -348,11 +352,16 @@ if [ -f /tmp/all_languages.txt ]; then
       language=$(echo "$language" | tr -d '"')
       
       # Calculate percentage of repos using this language
-      PERCENTAGE=$(echo "scale=1; ($count * 100) / $TOTAL_REPOS" | bc)
-      
-      # Generate visual bar (max 20 chars)
-      BAR_LENGTH=$(echo "scale=0; ($PERCENTAGE * 20) / 100" | bc)
-      BAR=$(printf '%*s' "$BAR_LENGTH" | tr ' ' '█')
+      if [ "$TOTAL_REPOS" -eq 0 ]; then
+        PERCENTAGE="0.0"
+        BAR=""
+      else
+        PERCENTAGE=$(echo "scale=1; ($count * 100) / $TOTAL_REPOS" | bc)
+        
+        # Generate visual bar (max 20 chars)
+        BAR_LENGTH=$(echo "scale=0; ($PERCENTAGE * 20) / 100" | bc)
+        BAR=$(printf '%*s' "$BAR_LENGTH" | tr ' ' '█')
+      fi
       
       # Add row to table with visual bar
       echo "| **$language** | $count | $PERCENTAGE% | $BAR |" >> "$OUTPUT_FILE"
