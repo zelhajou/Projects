@@ -7,6 +7,9 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -29,9 +32,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y bc jq
       
-      - name: Authenticate GitHub CLI
+      - name: Authenticate GitHub CLI with GITHUB_TOKEN
         run: |
-          echo "${{ secrets.PAT_TOKEN }}" > ./token.txt
+          echo "${{ secrets.GITHUB_TOKEN }}" > ./token.txt
           gh auth login --with-token < ./token.txt
           rm ./token.txt
       
@@ -55,9 +58,11 @@ jobs:
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           fi
       
-      - name: Push changes to repository
+      - name: Commit and push changes
         if: steps.check_changes.outputs.changes_detected == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto-update README.md with latest repository information"
-          file_pattern: README.md
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "Auto-update README.md with latest repository information"
+          git push
