@@ -12,19 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Generate SSH key pair
-        run: ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "github-actions" -N ""
-      
-      - name: Display public key for deploy key setup
-        run: |
-          echo "::notice::Add this deploy key to your repository with write access:"
-          cat ~/.ssh/id_ed25519.pub
-          echo "If you haven't set up a deploy key yet, this action will fail. Follow instructions above."
-      
-      - name: Checkout repository via SSH
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
           # Fetch all history for all branches and tags
           fetch-depth: 0
       
@@ -57,6 +47,13 @@ jobs:
       - name: Rename output file to README.md
         run: mv github_repositories_complete.md README.md
       
+      - name: Debug output
+        run: |
+          if [ -f /tmp/debug_output.txt ]; then
+            echo "Debug output:"
+            cat /tmp/debug_output.txt
+          fi
+      
       - name: Check for changes
         id: check_changes
         run: |
@@ -68,23 +65,11 @@ jobs:
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           fi
       
-      - name: Push changes via SSH
+      - name: Commit and push changes
         if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          
-          # Create a temporary backup of our generated README.md
-          cp README.md README.md.new
-          
-          # Reset local changes to match remote
-          git fetch origin main
-          git reset --hard origin/main
-          
-          # Copy our newly generated README back
-          cp README.md.new README.md
-          
-          # Stage, commit and push changes
           git add README.md
           git commit -m "Auto-update README.md with latest repository information"
-          git push origin main
+          git push
