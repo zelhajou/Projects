@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Use the built-in GITHUB_TOKEN with write permissions
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # Ensure we fetch complete history for accurate git operations
+          # Use your personal access token
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          # Ensure we fetch complete history
           fetch-depth: 0
         
       - name: Set up GitHub CLI
@@ -36,8 +36,9 @@ jobs:
       
       - name: Authenticate GitHub CLI
         run: |
-          # Use GITHUB_TOKEN for CLI authentication
-          gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+          echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ./token.txt
+          gh auth login --with-token < ./token.txt
+          rm ./token.txt
       
       - name: Make script executable
         run: chmod +x ./gh-repos-to-markdown.sh
@@ -66,5 +67,5 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
           git commit -m "Auto-update README.md with latest repository information"
-          # Push using the GITHUB_TOKEN for authentication
-          git push "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
+          # Use PAT explicitly in the push URL
+          git push "https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}
