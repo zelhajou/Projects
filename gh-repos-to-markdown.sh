@@ -1,15 +1,25 @@
 #!/bin/bash
 
-# Safe division function to prevent divide by zero errors
+# Enhanced GitHub Public Repositories Markdown Generator with Error Handling
+# This script generates a comprehensive markdown document of your public GitHub repositories
+# Requires GitHub CLI (gh) to be installed and authenticated
+
+# Output Filename
+OUTPUT_FILE="github_repositories_complete.md"
+
+# Repositories to ignore (space-separated list)
+IGNORED_REPOS="zelhajou"
+
+# Error handling function for safe division
 safe_division() {
   local numerator=$1
   local denominator=$2
   local default_value=${3:-"0.0"}
   
-  if [ "$denominator" -eq 0 ]; then
+  if [ -z "$denominator" ] || [ "$denominator" -eq 0 ]; then
     echo "$default_value"
   else
-    echo "scale=1; ($numerator / $denominator)" | bc
+    echo "scale=1; ($numerator) / ($denominator)" | bc 2>/dev/null || echo "$default_value"
   fi
 }
 
@@ -18,35 +28,42 @@ generate_bar() {
   local percentage=$1
   local max_length=${2:-20}
   
-  if [ "$percentage" = "0.0" ] || [ -z "$percentage" ]; then
+  # If percentage is not a valid number, return empty bar
+  if ! [[ "$percentage" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
     echo ""
-  else
-    local bar_length=$(echo "scale=0; ($percentage * $max_length) / 100" | bc)
-    printf '%*s' "$bar_length" | tr ' ' '█'
+    return
   fi
+  
+  local bar_length=$(echo "scale=0; ($percentage * $max_length) / 100" | bc 2>/dev/null)
+  
+  # If calculation failed, return empty bar
+  if [ -z "$bar_length" ]; then
+    echo ""
+    return
+  fi
+  
+  # If bar_length is less than 0, set to 0
+  if [ "$bar_length" -lt 0 ]; then
+    bar_length=0
+  fi
+  
+  printf '%*s' "$bar_length" | tr ' ' '█'
 }
 
-# Set output filename
-OUTPUT_FILE="github_repositories_complete.md"
-
-# Repositories to ignore (space-separated list)
-IGNORED_REPOS="zelhajou"
-
-# Get GitHub username
-USERNAME=$(gh api user --jq '.login')
-FULL_NAME=$(gh api user --jq '.name')
-BIO=$(gh api user --jq '.bio')
-FOLLOWERS=$(gh api user --jq '.followers')
-FOLLOWING=$(gh api user --jq '.following')
-PROFILE_URL=$(gh api user --jq '.html_url')
-PROFILE_IMG=$(gh api user --jq '.avatar_url')
-USER_LOCATION=$(gh api user --jq '.location')
-TWITTER=$(gh api user --jq '.twitter_username')
-BLOG=$(gh api user --jq '.blog')
-
-# Output status for GitHub Actions logs
 echo "Generating markdown document of public repositories for user: $USERNAME (newest first)"
 echo "Ignoring repositories: $IGNORED_REPOS"
+
+# Get GitHub username and user information safely
+USERNAME=$(gh api user --jq '.login' 2>/dev/null || echo "Unknown")
+FULL_NAME=$(gh api user --jq '.name' 2>/dev/null || echo "GitHub User")
+BIO=$(gh api user --jq '.bio' 2>/dev/null || echo "")
+FOLLOWERS=$(gh api user --jq '.followers' 2>/dev/null || echo "0")
+FOLLOWING=$(gh api user --jq '.following' 2>/dev/null || echo "0")
+PROFILE_URL=$(gh api user --jq '.html_url' 2>/dev/null || echo "https://github.com/$USERNAME")
+PROFILE_IMG=$(gh api user --jq '.avatar_url' 2>/dev/null || echo "https://github.com/$USERNAME.png")
+USER_LOCATION=$(gh api user --jq '.location' 2>/dev/null || echo "Not specified")
+TWITTER=$(gh api user --jq '.twitter_username' 2>/dev/null || echo "")
+BLOG=$(gh api user --jq '.blog' 2>/dev/null || echo "")
 
 # Create markdown header with user profile information and theme-aware styling
 cat > "$OUTPUT_FILE" << EOF
@@ -84,9 +101,9 @@ EOF
 echo "Fetching repository data..."
 
 # Get list of repos with createdAt field included
-gh repo list --limit 1000 --json name,description,isPrivate,stargazerCount,forkCount,updatedAt,createdAt,diskUsage > /tmp/repo_data.json
+gh repo list --limit 1000 --json name,description,isPrivate,stargazerCount,forkCount,updatedAt,createdAt,diskUsage > /tmp/repo_data.json 2>/dev/null
 
-# Save statistics data for later use
+# Initialize statistics counters
 PUBLIC_COUNT=0
 TOTAL_STARS=0
 TOTAL_FORKS=0
@@ -97,94 +114,96 @@ MOST_FORKED=""
 MOST_FORKED_COUNT=0
 
 # Process JSON data, create a temporary file for sorting
-jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
-  # Extract repository name
-  repo_name=$(echo "$repo_entry" | jq -r '.name')
-  
-  # Skip if no repo name is found
-  if [ -z "$repo_name" ]; then
-    continue
-  fi
-  
-  # Skip ignored repositories
-  if [[ " $IGNORED_REPOS " == *" $repo_name "* ]]; then
-    continue
-  fi
-  
-  # Extract other properties
-  description=$(echo "$repo_entry" | jq -r '.description // "*No description*"')
-  is_private=$(echo "$repo_entry" | jq -r '.isPrivate')
-  stars=$(echo "$repo_entry" | jq -r '.stargazerCount')
-  forks=$(echo "$repo_entry" | jq -r '.forkCount')
-  updated=$(echo "$repo_entry" | jq -r '.updatedAt' | cut -dT -f1)
-  created=$(echo "$repo_entry" | jq -r '.createdAt' | cut -dT -f1)
-  size=$(echo "$repo_entry" | jq -r '.diskUsage')
-  
-  # Skip private repositories
-  if [ "$is_private" = "true" ]; then
-    continue
-  fi
+if [ -f /tmp/repo_data.json ]; then
+  jq -c '.[]' /tmp/repo_data.json 2>/dev/null | while read -r repo_entry; do
+    # Extract repository name
+    repo_name=$(echo "$repo_entry" | jq -r '.name' 2>/dev/null)
+    
+    # Skip if no repo name is found
+    if [ -z "$repo_name" ]; then
+      continue
+    fi
+    
+    # Skip ignored repositories
+    if [[ " $IGNORED_REPOS " == *" $repo_name "* ]]; then
+      continue
+    fi
+    
+    # Extract other properties
+    description=$(echo "$repo_entry" | jq -r '.description // "*No description*"' 2>/dev/null)
+    is_private=$(echo "$repo_entry" | jq -r '.isPrivate' 2>/dev/null)
+    stars=$(echo "$repo_entry" | jq -r '.stargazerCount // 0' 2>/dev/null)
+    forks=$(echo "$repo_entry" | jq -r '.forkCount // 0' 2>/dev/null)
+    updated=$(echo "$repo_entry" | jq -r '.updatedAt' 2>/dev/null | cut -dT -f1)
+    created=$(echo "$repo_entry" | jq -r '.createdAt' 2>/dev/null | cut -dT -f1)
+    size=$(echo "$repo_entry" | jq -r '.diskUsage // 0' 2>/dev/null)
+    
+    # Skip private repositories
+    if [ "$is_private" = "true" ]; then
+      continue
+    fi
 
-  # Track statistics for public repositories
-  PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
-  TOTAL_STARS=$((TOTAL_STARS + stars))
-  TOTAL_FORKS=$((TOTAL_FORKS + forks))
-  TOTAL_SIZE=$((TOTAL_SIZE + size))
-  
-  # Track most starred and forked repos
-  if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
-    MOST_STARRED="$repo_name"
-    MOST_STARRED_COUNT=$stars
-  fi
-  
-  if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
-    MOST_FORKED="$repo_name"
-    MOST_FORKED_COUNT=$forks
-  fi
-  
-  # Handle missing values
-  description=${description:-"*No description*"}
-  stars=${stars:-0}
-  forks=${forks:-0}
-  updated=${updated:-"Unknown"}
-  created=${created:-"Unknown"}
-  size=${size:-0}
-  
-  # Convert size from KB to MB if larger than 1000
-  if [ "$size" -gt 1000 ]; then
-    size_display="$(echo "scale=1; $size/1024" | bc) MB"
-  else
-    size_display="${size} KB"
-  fi
-  
-  # Truncate long descriptions
-  if [ ${#description} -gt 100 ]; then
-    description="${description:0:97}..."
-  fi
-  
-  # Escape any pipe characters in description
-  description=$(echo "$description" | sed 's/|/\\|/g')
-  
-  # Get primary language for repository
-  primary_lang=$(gh api repos/$USERNAME/$repo_name --jq '.language')
-  
-  # Add language and size information to the listing
-  echo "$created|[$repo_name](https://github.com/$USERNAME/$repo_name)|$description|$created|$updated|$stars|$forks|$size_display|$primary_lang" >> /tmp/repo_entries.txt
-  
-  # Get contributors count
-  contributors_count=$(gh api repos/$USERNAME/$repo_name/contributors --jq 'length')
-  echo "$repo_name:$contributors_count" >> /tmp/contributors.txt
-  
-  # Get languages for this repo and percentages
-  gh api repos/$USERNAME/$repo_name/languages >> /tmp/repo_languages_$repo_name.json
-done
+    # Track statistics for public repositories
+    PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
+    TOTAL_STARS=$((TOTAL_STARS + stars))
+    TOTAL_FORKS=$((TOTAL_FORKS + forks))
+    TOTAL_SIZE=$((TOTAL_SIZE + size))
+    
+    # Track most starred and forked repos
+    if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
+      MOST_STARRED="$repo_name"
+      MOST_STARRED_COUNT=$stars
+    fi
+    
+    if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
+      MOST_FORKED="$repo_name"
+      MOST_FORKED_COUNT=$forks
+    fi
+    
+    # Handle missing values
+    description=${description:-"*No description*"}
+    stars=${stars:-0}
+    forks=${forks:-0}
+    updated=${updated:-"Unknown"}
+    created=${created:-"Unknown"}
+    size=${size:-0}
+    
+    # Convert size from KB to MB if larger than 1000
+    if [ "$size" -gt 1000 ]; then
+      size_display="$(safe_division "$size" "1024") MB"
+    else
+      size_display="${size} KB"
+    fi
+    
+    # Truncate long descriptions
+    if [ ${#description} -gt 100 ]; then
+      description="${description:0:97}..."
+    fi
+    
+    # Escape any pipe characters in description
+    description=$(echo "$description" | sed 's/|/\\|/g')
+    
+    # Get primary language for repository
+    primary_lang=$(gh api repos/$USERNAME/$repo_name --jq '.language' 2>/dev/null || echo "")
+    
+    # Add language and size information to the listing
+    echo "$created|[$repo_name](https://github.com/$USERNAME/$repo_name)|$description|$created|$updated|$stars|$forks|$size_display|$primary_lang" >> /tmp/repo_entries.txt
+    
+    # Get contributors count
+    contributors_count=$(gh api repos/$USERNAME/$repo_name/contributors --jq 'length' 2>/dev/null || echo "0")
+    echo "$repo_name:$contributors_count" >> /tmp/contributors.txt
+    
+    # Get languages for this repo and percentages
+    gh api repos/$USERNAME/$repo_name/languages > /tmp/repo_languages_$repo_name.json 2>/dev/null || echo "{}" > /tmp/repo_languages_$repo_name.json
+  done
+fi
 
-# Save stats at once after all repos are processed
+# Save stats for later use
 echo "$PUBLIC_COUNT $TOTAL_STARS $TOTAL_FORKS $TOTAL_SIZE $MOST_STARRED $MOST_STARRED_COUNT $MOST_FORKED $MOST_FORKED_COUNT" > /tmp/repo_stats.txt
 
 # Sort by creation date in reverse order (newest first) and append to markdown
 if [ -f /tmp/repo_entries.txt ]; then
-  sort -r /tmp/repo_entries.txt | while IFS="|" read -r sort_date repo_link desc created updated stars forks size lang; do
+  sort -r /tmp/repo_entries.txt 2>/dev/null | while IFS="|" read -r sort_date repo_link desc created updated stars forks size lang; do
     # Add language badge if available
     if [ "$lang" != "null" ] && [ -n "$lang" ]; then
       # Match language to appropriate color
@@ -218,15 +237,19 @@ if [ -f /tmp/repo_stats.txt ]; then
   read PUBLIC_COUNT TOTAL_STARS TOTAL_FORKS TOTAL_SIZE MOST_STARRED MOST_STARRED_COUNT MOST_FORKED MOST_FORKED_COUNT < /tmp/repo_stats.txt
 fi
 
-# Count all repositories for total
-TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
+# Count all repositories for total (safely)
+TOTAL_REPOS=$(gh repo list --limit 1000 2>/dev/null | wc -l 2>/dev/null || echo "0")
+TOTAL_REPOS=${TOTAL_REPOS:-0}
 PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
+if [ "$PRIVATE_REPOS" -lt 0 ]; then
+  PRIVATE_REPOS=0
+fi
 
 # Calculate total size in human-readable format
 if [ "$TOTAL_SIZE" -gt 1000000 ]; then
-  TOTAL_SIZE_DISPLAY="$(echo "scale=2; $TOTAL_SIZE/1048576" | bc) GB"
+  TOTAL_SIZE_DISPLAY="$(safe_division "$TOTAL_SIZE" "1048576") GB"
 elif [ "$TOTAL_SIZE" -gt 1000 ]; then
-  TOTAL_SIZE_DISPLAY="$(echo "scale=2; $TOTAL_SIZE/1024" | bc) MB"
+  TOTAL_SIZE_DISPLAY="$(safe_division "$TOTAL_SIZE" "1024") MB"
 else
   TOTAL_SIZE_DISPLAY="$TOTAL_SIZE KB"
 fi
@@ -291,38 +314,62 @@ EOF
 
 # Add repository age statistics
 if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
-  OLDEST_REPO_INFO=$(sort /tmp/repo_entries.txt | head -1)
-  NEWEST_REPO_INFO=$(sort -r /tmp/repo_entries.txt | head -1)
+  OLDEST_REPO_INFO=$(sort /tmp/repo_entries.txt 2>/dev/null | head -1)
+  NEWEST_REPO_INFO=$(sort -r /tmp/repo_entries.txt 2>/dev/null | head -1)
   
-  OLDEST_REPO_DATE=$(echo "$OLDEST_REPO_INFO" | cut -d'|' -f4)
-  OLDEST_REPO_NAME=$(echo "$OLDEST_REPO_INFO" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+  if [ -n "$OLDEST_REPO_INFO" ]; then
+    OLDEST_REPO_DATE=$(echo "$OLDEST_REPO_INFO" | cut -d'|' -f4)
+    OLDEST_REPO_NAME=$(echo "$OLDEST_REPO_INFO" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+  else
+    OLDEST_REPO_DATE="Unknown"
+    OLDEST_REPO_NAME="Unknown"
+  fi
   
-  NEWEST_REPO_DATE=$(echo "$NEWEST_REPO_INFO" | cut -d'|' -f4)
-  NEWEST_REPO_NAME=$(echo "$NEWEST_REPO_INFO" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+  if [ -n "$NEWEST_REPO_INFO" ]; then
+    NEWEST_REPO_DATE=$(echo "$NEWEST_REPO_INFO" | cut -d'|' -f4)
+    NEWEST_REPO_NAME=$(echo "$NEWEST_REPO_INFO" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+  else
+    NEWEST_REPO_DATE="Unknown"
+    NEWEST_REPO_NAME="Unknown"
+  fi
   
   echo -e "\n### Repository Timeline" >> "$OUTPUT_FILE"
-  echo "- 📅 **First repository:** [$OLDEST_REPO_NAME](https://github.com/$USERNAME/$OLDEST_REPO_NAME) created on $OLDEST_REPO_DATE" >> "$OUTPUT_FILE"
-  echo "- 🆕 **Most recent repository:** [$NEWEST_REPO_NAME](https://github.com/$USERNAME/$NEWEST_REPO_NAME) created on $NEWEST_REPO_DATE" >> "$OUTPUT_FILE"
+  
+  if [ "$OLDEST_REPO_NAME" != "Unknown" ]; then
+    echo "- 📅 **First repository:** [$OLDEST_REPO_NAME](https://github.com/$USERNAME/$OLDEST_REPO_NAME) created on $OLDEST_REPO_DATE" >> "$OUTPUT_FILE"
+  fi
+  
+  if [ "$NEWEST_REPO_NAME" != "Unknown" ]; then
+    echo "- 🆕 **Most recent repository:** [$NEWEST_REPO_NAME](https://github.com/$USERNAME/$NEWEST_REPO_NAME) created on $NEWEST_REPO_DATE" >> "$OUTPUT_FILE"
+  fi
   
   # Calculate GitHub account age
-  ACCOUNT_INFO=$(gh api user --jq '.created_at')
-  ACCOUNT_CREATED=$(echo "$ACCOUNT_INFO" | cut -dT -f1)
-  CURRENT_DATE=$(date +"%Y-%m-%d")
-  
-  # Calculate account age in years (approximate)
-  ACCOUNT_YEAR=$(echo "$ACCOUNT_CREATED" | cut -d'-' -f1)
-  CURRENT_YEAR=$(echo "$CURRENT_DATE" | cut -d'-' -f1)
-  ACCOUNT_AGE=$((CURRENT_YEAR - ACCOUNT_YEAR))
-  
-  echo "- 🎂 **GitHub account age:** Approximately $ACCOUNT_AGE years (created on $ACCOUNT_CREATED)" >> "$OUTPUT_FILE"
-  
-  # Calculate average repositories per year
-  if [ "$ACCOUNT_AGE" -eq 0 ] || [ -z "$ACCOUNT_AGE" ]; then
-    REPOS_PER_YEAR="$PUBLIC_COUNT (account created this year)"
-  else
-    REPOS_PER_YEAR=$(safe_division "$PUBLIC_COUNT" "$ACCOUNT_AGE")
+  ACCOUNT_INFO=$(gh api user --jq '.created_at' 2>/dev/null || echo "")
+  if [ -n "$ACCOUNT_INFO" ]; then
+    ACCOUNT_CREATED=$(echo "$ACCOUNT_INFO" | cut -dT -f1)
+    CURRENT_DATE=$(date +"%Y-%m-%d")
+    
+    # Calculate account age in years (approximate)
+    ACCOUNT_YEAR=$(echo "$ACCOUNT_CREATED" | cut -d'-' -f1)
+    CURRENT_YEAR=$(echo "$CURRENT_DATE" | cut -d'-' -f1)
+    
+    if [ -n "$ACCOUNT_YEAR" ] && [ -n "$CURRENT_YEAR" ]; then
+      ACCOUNT_AGE=$((CURRENT_YEAR - ACCOUNT_YEAR))
+      if [ "$ACCOUNT_AGE" -lt 0 ]; then
+        ACCOUNT_AGE=0
+      fi
+      
+      echo "- 🎂 **GitHub account age:** Approximately $ACCOUNT_AGE years (created on $ACCOUNT_CREATED)" >> "$OUTPUT_FILE"
+      
+      # Calculate average repositories per year
+      if [ "$ACCOUNT_AGE" -gt 0 ]; then
+        REPOS_PER_YEAR=$(safe_division "$PUBLIC_COUNT" "$ACCOUNT_AGE")
+        echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
+      else
+        echo "- 📊 **Average creation rate:** $PUBLIC_COUNT repositories this year" >> "$OUTPUT_FILE"
+      fi
+    fi
   fi
-  echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
 fi
 
 # Generate contribution activity heatmap link with theme variants
@@ -354,12 +401,12 @@ echo -e "\n### Detailed Language Breakdown" >> "$OUTPUT_FILE"
 
 # Create temp file for all languages
 > /tmp/all_languages.txt
-for repo in $(gh repo list --json name,isPrivate --jq '.[] | select(.isPrivate==false) | .name' | grep -v "$IGNORED_REPOS"); do
+for repo in $(gh repo list --json name,isPrivate --jq '.[] | select(.isPrivate==false) | .name' 2>/dev/null | grep -v "$IGNORED_REPOS"); do
   # Get languages for this repo
   gh api repos/$USERNAME/$repo/languages --jq 'keys[]' 2>/dev/null >> /tmp/all_languages.txt
 done
 
-if [ -f /tmp/all_languages.txt ]; then
+if [ -f /tmp/all_languages.txt ] && [ -s /tmp/all_languages.txt ]; then
   # Count total repos
   TOTAL_REPOS=$PUBLIC_COUNT
   
@@ -368,7 +415,7 @@ if [ -f /tmp/all_languages.txt ]; then
   echo -e "|----------|------------------|------------|-----|" >> "$OUTPUT_FILE"
   
   # Generate statistics with visual bars
-  cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -15 | while read -r count language; do
+  cat /tmp/all_languages.txt | sort 2>/dev/null | uniq -c 2>/dev/null | sort -nr 2>/dev/null | head -15 | while read -r count language; do
     if [ -n "$language" ]; then
       # Remove quotes if present
       language=$(echo "$language" | tr -d '"')
@@ -404,13 +451,13 @@ echo -e "  </picture>" >> "$OUTPUT_FILE"
 echo -e "</div>" >> "$OUTPUT_FILE"
 
 # Add contributor statistics if available
-if [ -f /tmp/contributors.txt ]; then
-  TOTAL_CONTRIBUTORS=$(cat /tmp/contributors.txt | awk -F':' '{sum+=$2} END {print sum}')
+if [ -f /tmp/contributors.txt ] && [ -s /tmp/contributors.txt ]; then
+  TOTAL_CONTRIBUTORS=$(cat /tmp/contributors.txt | awk -F':' '{sum+=$2} END {print sum}' 2>/dev/null || echo "0")
   MAX_CONTRIBUTORS=0
   MAX_CONTRIB_REPO=""
   
   while IFS=':' read -r repo contrib; do
-    if [ "$contrib" -gt "$MAX_CONTRIBUTORS" ]; then
+    if [ -n "$contrib" ] && [ "$contrib" -gt "$MAX_CONTRIBUTORS" ]; then
       MAX_CONTRIBUTORS=$contrib
       MAX_CONTRIB_REPO=$repo
     fi
@@ -418,7 +465,9 @@ if [ -f /tmp/contributors.txt ]; then
   
   echo -e "\n## Collaboration Stats" >> "$OUTPUT_FILE"
   echo -e "- 👥 **Total contributors across all repositories:** $TOTAL_CONTRIBUTORS" >> "$OUTPUT_FILE"
-  echo -e "- 🤝 **Most collaborative project:** [$MAX_CONTRIB_REPO](https://github.com/$USERNAME/$MAX_CONTRIB_REPO) with $MAX_CONTRIBUTORS contributors" >> "$OUTPUT_FILE"
+  if [ -n "$MAX_CONTRIB_REPO" ]; then
+    echo -e "- 🤝 **Most collaborative project:** [$MAX_CONTRIB_REPO](https://github.com/$USERNAME/$MAX_CONTRIB_REPO) with $MAX_CONTRIBUTORS contributors" >> "$OUTPUT_FILE"
+  fi
 fi
 
 # Add commit frequency data with theme awareness
@@ -451,7 +500,7 @@ echo -e "</div>\n" >> "$OUTPUT_FILE"
 echo -e "\n<div align=\"center\">Generated using <a href=\"https://github.com/$USERNAME/projects\">GitHub Repository Markdown Generator</a> on $(date)</div>" >> "$OUTPUT_FILE"
 
 # Clean up temporary files
-rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
-rm -f /tmp/repo_languages_*
+rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt
+rm -f /tmp/repo_languages_* 2>/dev/null
 
 echo "README generation complete! Output saved to $OUTPUT_FILE"
