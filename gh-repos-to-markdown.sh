@@ -126,19 +126,32 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
     continue
   fi
 
+  # Debug output
+  echo "Processing repo: $repo_name, Stars: $stars, Forks: $forks, Size: $size" >> /tmp/debug_output.txt
+
   # Track statistics for public repositories
   PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
-  TOTAL_STARS=$((TOTAL_STARS + stars))
-  TOTAL_FORKS=$((TOTAL_FORKS + forks))
-  TOTAL_SIZE=$((TOTAL_SIZE + size))
+  
+  # Ensure stars, forks, and size are numbers before adding
+  if [[ "$stars" =~ ^[0-9]+$ ]]; then
+    TOTAL_STARS=$((TOTAL_STARS + stars))
+  fi
+  
+  if [[ "$forks" =~ ^[0-9]+$ ]]; then
+    TOTAL_FORKS=$((TOTAL_FORKS + forks))
+  fi
+  
+  if [[ "$size" =~ ^[0-9]+$ ]]; then
+    TOTAL_SIZE=$((TOTAL_SIZE + size))
+  fi
   
   # Track most starred and forked repos
-  if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
+  if [[ "$stars" =~ ^[0-9]+$ ]] && [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
     MOST_STARRED="$repo_name"
     MOST_STARRED_COUNT=$stars
   fi
   
-  if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
+  if [[ "$forks" =~ ^[0-9]+$ ]] && [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
     MOST_FORKED="$repo_name"
     MOST_FORKED_COUNT=$forks
   fi
