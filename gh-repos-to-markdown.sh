@@ -448,8 +448,6 @@ fi
 
 echo -e "</div>\n" >> "$OUTPUT_FILE"
 
-echo -e "\n<div align=\"center\">Generated using <a href=\"https://github.com/$USERNAME/projects\">GitHub Repository Markdown Generator</a> on $(date)</div>" >> "$OUTPUT_FILE"
-
 # Clean up temporary files
 rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
 rm -f /tmp/repo_languages_*
