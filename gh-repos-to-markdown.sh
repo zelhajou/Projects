@@ -1,8 +1,30 @@
 #!/bin/bash
 
-# Enhanced GitHub Public Repositories Markdown Generator for GitHub Actions
-# This script generates a comprehensive markdown document of your public GitHub repositories
-# Requires GitHub CLI (gh) to be installed and authenticated
+# Safe division function to prevent divide by zero errors
+safe_division() {
+  local numerator=$1
+  local denominator=$2
+  local default_value=${3:-"0.0"}
+  
+  if [ "$denominator" -eq 0 ]; then
+    echo "$default_value"
+  else
+    echo "scale=1; ($numerator / $denominator)" | bc
+  fi
+}
+
+# Safe bar generation function
+generate_bar() {
+  local percentage=$1
+  local max_length=${2:-20}
+  
+  if [ "$percentage" = "0.0" ] || [ -z "$percentage" ]; then
+    echo ""
+  else
+    local bar_length=$(echo "scale=0; ($percentage * $max_length) / 100" | bc)
+    printf '%*s' "$bar_length" | tr ' ' '█'
+  fi
+}
 
 # Set output filename
 OUTPUT_FILE="github_repositories_complete.md"
@@ -295,10 +317,10 @@ if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
   echo "- 🎂 **GitHub account age:** Approximately $ACCOUNT_AGE years (created on $ACCOUNT_CREATED)" >> "$OUTPUT_FILE"
   
   # Calculate average repositories per year
-  if [ "$ACCOUNT_AGE" -eq 0 ]; then
+  if [ "$ACCOUNT_AGE" -eq 0 ] || [ -z "$ACCOUNT_AGE" ]; then
     REPOS_PER_YEAR="$PUBLIC_COUNT (account created this year)"
   else
-    REPOS_PER_YEAR=$(echo "scale=1; $PUBLIC_COUNT / $ACCOUNT_AGE" | bc)
+    REPOS_PER_YEAR=$(safe_division "$PUBLIC_COUNT" "$ACCOUNT_AGE")
   fi
   echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
 fi
@@ -352,15 +374,12 @@ if [ -f /tmp/all_languages.txt ]; then
       language=$(echo "$language" | tr -d '"')
       
       # Calculate percentage of repos using this language
-      if [ "$TOTAL_REPOS" -eq 0 ]; then
+      if [ "$TOTAL_REPOS" -eq 0 ] || [ -z "$TOTAL_REPOS" ]; then
         PERCENTAGE="0.0"
         BAR=""
       else
-        PERCENTAGE=$(echo "scale=1; ($count * 100) / $TOTAL_REPOS" | bc)
-        
-        # Generate visual bar (max 20 chars)
-        BAR_LENGTH=$(echo "scale=0; ($PERCENTAGE * 20) / 100" | bc)
-        BAR=$(printf '%*s' "$BAR_LENGTH" | tr ' ' '█')
+        PERCENTAGE=$(safe_division "($count * 100)" "$TOTAL_REPOS")
+        BAR=$(generate_bar "$PERCENTAGE")
       fi
       
       # Add row to table with visual bar
