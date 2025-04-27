@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# ssh-keygen -t ed25519 -f ./github_actions_key -N ""
-
-
 # Safe division function to prevent divide by zero errors
 safe_division() {
   local numerator=$1
@@ -12,7 +9,8 @@ safe_division() {
   if [ "$denominator" -eq 0 ]; then
     echo "$default_value"
   else
-    echo "scale=1; ($numerator / $denominator)" | bc
+    # Calculate the result directly without parentheses
+    echo "scale=1; $numerator / $denominator" | bc
   fi
 }
 
@@ -381,7 +379,9 @@ if [ -f /tmp/all_languages.txt ]; then
         PERCENTAGE="0.0"
         BAR=""
       else
-        PERCENTAGE=$(safe_division "($count * 100)" "$TOTAL_REPOS")
+        # Fix: First calculate the percentage value, then pass it to safe_division
+        percentage_value=$(( count * 100 ))
+        PERCENTAGE=$(safe_division "$percentage_value" "$TOTAL_REPOS")
         BAR=$(generate_bar "$PERCENTAGE")
       fi
       
@@ -452,7 +452,6 @@ fi
 echo -e "</div>\n" >> "$OUTPUT_FILE"
 
 echo -e "\n<div align=\"center\"><small>Last updated: $(date '+%B %d, %Y')</small></div>" >> "$OUTPUT_FILE"
-
 
 # Clean up temporary files
 rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
