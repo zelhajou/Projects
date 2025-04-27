@@ -33,7 +33,7 @@ generate_bar() {
 OUTPUT_FILE="github_repositories_complete.md"
 
 # Repositories to ignore (space-separated list)
-IGNORED_REPOS="zelhajou"
+IGNORED_REPOS="zelhajou Projects"
 
 # Get GitHub username
 USERNAME=$(gh api user --jq '.login')
