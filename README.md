@@ -26,7 +26,6 @@ Last updated: April 27, 2025
 
 | Repository | Description | Created | Last Updated | Stars | Forks | Size |
 |------------|-------------|---------|-------------|-------|-------|------|
-| [Projects](https://github.com/zelhajou/Projects) | Comprehensive showcase of my GitHub repositories with detailed statistics, language breakdowns an... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2025-04-27 | 0 | 0 | 49 KB |
 | [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 | 0 | 1.0 MB |
 | [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-04-26 | 0 | 0 | 19 KB |
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-04-23 | 3 | 1 | 591 KB |
@@ -107,7 +106,7 @@ Last updated: April 27, 2025
 
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
-- 🆕 **Most recent repository:** [Projects](https://github.com/zelhajou/Projects) created on 2025-04-26
+- 🆕 **Most recent repository:** [SukStack](https://github.com/zelhajou/SukStack) created on 2025-04-07
 - 🎂 **GitHub account age:** Approximately 7 years (created on 2018-06-05)
 - 📊 **Average creation rate:** 0 repositories per year
 
@@ -171,7 +170,7 @@ Language composition across all repositories:
 </div>
 
 ## Collaboration Stats
-- 👥 **Total contributors across all repositories:** 29
+- 👥 **Total contributors across all repositories:** 28
 - 🤝 **Most collaborative project:** [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) with 3 contributors
 
 ## Commit Activity
