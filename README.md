@@ -81,8 +81,8 @@ Last updated: April 27, 2025
 </div>
 
 ### Notable Repositories
-- 🌟 **Most starred:** [](https://github.com/{"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/users/users#get-the-authenticated-user","status":"403"}/) with 0 stars
-- 🍴 **Most forked:** [](https://github.com/{"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/users/users#get-the-authenticated-user","status":"403"}/) with 0 forks
+- 🌟 **Most starred:** [0](https://github.com/{"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/users/users#get-the-authenticated-user","status":"403"}/0) with 0 stars
+- 🍴 **Most forked:** [](https://github.com/{"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/users/users#get-the-authenticated-user","status":"403"}/) with  forks
 
 ### Contribution Activity
 
