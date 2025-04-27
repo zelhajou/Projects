@@ -14,10 +14,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          # Fetch all history for all branches and tags
-          fetch-depth: 0
-      
+        
       - name: Set up GitHub CLI
         run: |
           type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
@@ -44,15 +41,15 @@ jobs:
       - name: Run repository markdown generator
         run: ./gh-repos-to-markdown.sh
       
+      - name: Display debug stats
+        run: |
+          if [ -f /tmp/final_stats.txt ]; then
+            echo "Stats calculated:"
+            cat /tmp/final_stats.txt
+          fi
+      
       - name: Rename output file to README.md
         run: mv github_repositories_complete.md README.md
-      
-      - name: Debug output
-        run: |
-          if [ -f /tmp/debug_output.txt ]; then
-            echo "Debug output:"
-            cat /tmp/debug_output.txt
-          fi
       
       - name: Check for changes
         id: check_changes
