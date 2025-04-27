@@ -1,0 +1,90 @@
+name: Update GitHub Projects README
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Generate SSH key pair
+        run: ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "github-actions" -N ""
+      
+      - name: Display public key for deploy key setup
+        run: |
+          echo "::notice::Add this deploy key to your repository with write access:"
+          cat ~/.ssh/id_ed25519.pub
+          echo "If you haven't set up a deploy key yet, this action will fail. Follow instructions above."
+      
+      - name: Checkout repository via SSH
+        uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          # Fetch all history for all branches and tags
+          fetch-depth: 0
+      
+      - name: Set up GitHub CLI
+        run: |
+          type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+          && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+          && sudo apt update \
+          && sudo apt install gh -y
+      
+      - name: Install required dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bc jq
+      
+      - name: Authenticate GitHub CLI
+        run: |
+          echo "${{ secrets.GH_TOKEN }}" > ./token.txt
+          gh auth login --with-token < ./token.txt
+          rm ./token.txt
+      
+      - name: Make script executable
+        run: chmod +x ./gh-repos-to-markdown.sh
+      
+      - name: Run repository markdown generator
+        run: ./gh-repos-to-markdown.sh
+      
+      - name: Rename output file to README.md
+        run: mv github_repositories_complete.md README.md
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "No changes to commit"
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected in README.md"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Push changes via SSH
+        if: steps.check_changes.outputs.changes_detected == 'true'
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          
+          # Create a temporary backup of our generated README.md
+          cp README.md README.md.new
+          
+          # Reset local changes to match remote
+          git fetch origin main
+          git reset --hard origin/main
+          
+          # Copy our newly generated README back
+          cp README.md.new README.md
+          
+          # Stage, commit and push changes
+          git add README.md
+          git commit -m "Auto-update README.md with latest repository information"
+          git push origin main
