@@ -129,16 +129,22 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
 
   # Track statistics for public repositories
   PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
-  TOTAL_STARS=$((TOTAL_STARS + stars))
-  TOTAL_FORKS=$((TOTAL_FORKS + forks))
+  # Convert stars and forks to numbers, default to 0 if empty or not a number
+  if [[ "$stars" =~ ^[0-9]+$ ]]; then
+    TOTAL_STARS=$((TOTAL_STARS + stars))
+  fi
+  
+  if [[ "$forks" =~ ^[0-9]+$ ]]; then
+    TOTAL_FORKS=$((TOTAL_FORKS + forks))
+  fi
   
   # Track most starred and forked repos
-  if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
+  if [[ "$stars" =~ ^[0-9]+$ ]] && [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
     MOST_STARRED="$repo_name"
     MOST_STARRED_COUNT=$stars
   fi
   
-  if [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
+  if [[ "$forks" =~ ^[0-9]+$ ]] && [ "$forks" -gt "$MOST_FORKED_COUNT" ]; then
     MOST_FORKED="$repo_name"
     MOST_FORKED_COUNT=$forks
   fi
@@ -165,6 +171,10 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   
   # Get contributors count
   contributors_count=$(gh api repos/$USERNAME/$repo_name/contributors --jq 'length')
+  # Make sure contributors_count is a number
+  if [[ ! "$contributors_count" =~ ^[0-9]+$ ]]; then
+    contributors_count=0
+  fi
   echo "$repo_name:$contributors_count" >> /tmp/contributors.txt
   
   # Get languages for this repo and percentages
@@ -332,11 +342,16 @@ if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
     REPOS_PER_YEAR=$(safe_division "$PUBLIC_COUNT" "$ACCOUNT_AGE")
     
     # Make sure we don't display "0" for the repos per year
-    if [ "$REPOS_PER_YEAR" = "0.0" ] || [ "$REPOS_PER_YEAR" = "0" ]; then
+    if [ "$REPOS_PER_YEAR" = "0.0" ] || [ "$REPOS_PER_YEAR" = "0" ] || [ "$REPOS_PER_YEAR" = ".0" ]; then
       REPOS_PER_YEAR=$(bc <<< "scale=1; $PUBLIC_COUNT / $ACCOUNT_AGE")
       # If still zero, use a more user-friendly format
       if [ "$REPOS_PER_YEAR" = "0" ] || [ "$REPOS_PER_YEAR" = ".0" ] || [ "$REPOS_PER_YEAR" = "0.0" ]; then
-        REPOS_PER_YEAR="approximately $PUBLIC_COUNT over $ACCOUNT_AGE years"
+        # Create a more natural-sounding message
+        if [ "$PUBLIC_COUNT" -eq 1 ]; then
+          REPOS_PER_YEAR="$PUBLIC_COUNT repository in $ACCOUNT_AGE years"
+        else
+          REPOS_PER_YEAR="$PUBLIC_COUNT repositories in $ACCOUNT_AGE years"
+        fi
       fi
     fi
   fi
@@ -421,19 +436,38 @@ echo -e "</div>" >> "$OUTPUT_FILE"
 # Add contributor statistics if available
 if [ -f /tmp/contributors.txt ]; then
   TOTAL_CONTRIBUTORS=$(cat /tmp/contributors.txt | awk -F':' '{sum+=$2} END {print sum}')
+  # Set default value if no contributors found
+  TOTAL_CONTRIBUTORS=${TOTAL_CONTRIBUTORS:-0}
+  
   MAX_CONTRIBUTORS=0
   MAX_CONTRIB_REPO=""
   
-  while IFS=':' read -r repo contrib; do
-    if [ "$contrib" -gt "$MAX_CONTRIBUTORS" ]; then
-      MAX_CONTRIBUTORS=$contrib
-      MAX_CONTRIB_REPO=$repo
-    fi
-  done < /tmp/contributors.txt
+  # Check if contributors file has any content
+  if [ -s /tmp/contributors.txt ]; then
+    while IFS=':' read -r repo contrib; do
+      # Ensure contributor count is a number
+      if [[ "$contrib" =~ ^[0-9]+$ ]] && [ "$contrib" -gt "$MAX_CONTRIBUTORS" ]; then
+        MAX_CONTRIBUTORS=$contrib
+        MAX_CONTRIB_REPO=$repo
+      fi
+    done < /tmp/contributors.txt
+  fi
+  
+  # Default to the first repo if no collaborative project was found
+  if [ -z "$MAX_CONTRIB_REPO" ] && [ -s /tmp/repo_entries.txt ]; then
+    FIRST_REPO_LINE=$(head -1 /tmp/repo_entries.txt)
+    MAX_CONTRIB_REPO=$(echo "$FIRST_REPO_LINE" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+    MAX_CONTRIBUTORS=1
+  fi
   
   echo -e "\n## Collaboration Stats" >> "$OUTPUT_FILE"
   echo -e "- 👥 **Total contributors across all repositories:** $TOTAL_CONTRIBUTORS" >> "$OUTPUT_FILE"
-  echo -e "- 🤝 **Most collaborative project:** [$MAX_CONTRIB_REPO](https://github.com/$USERNAME/$MAX_CONTRIB_REPO) with $MAX_CONTRIBUTORS contributors" >> "$OUTPUT_FILE"
+  
+  if [ -n "$MAX_CONTRIB_REPO" ]; then
+    echo -e "- 🤝 **Most collaborative project:** [$MAX_CONTRIB_REPO](https://github.com/$USERNAME/$MAX_CONTRIB_REPO) with $MAX_CONTRIBUTORS contributors" >> "$OUTPUT_FILE"
+  else
+    echo -e "- 🤝 **No collaborative projects detected**" >> "$OUTPUT_FILE"
+  fi
 fi
 
 # Add commit frequency data with theme awareness
