@@ -75,7 +75,7 @@ Last updated: April 28, 2025
       </td>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" colspan="3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
           <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
@@ -87,14 +87,13 @@ Last updated: April 28, 2025
 </div>
 
 ### Notable Repositories
-- 🌟 **Most starred:** [0](https://github.com/zelhajou/0) with 0 stars
-- 🍴 **Most forked:** [](https://github.com/zelhajou/) with  forks
+- 🌟 **Most starred:** [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) with 36 stars
 
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
 - 🆕 **Most recent repository:** [SukStack](https://github.com/zelhajou/SukStack) created on 2025-04-07
 - 🎂 **GitHub account age:** Approximately 7 years (created on 2018-06-05)
-- 📊 **Average creation rate:** 0 repositories per year
+- 📊 **Average creation rate:** approximately 0 over 7 years repositories per year
 
 ### Contribution Activity
 
