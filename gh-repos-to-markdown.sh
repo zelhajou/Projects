@@ -418,19 +418,45 @@ if [ -f /tmp/all_languages.txt ]; then
   # Function to get icon for language
   get_icon_for_language() {
     local lang="$1"
-    # Convert language name to lowercase and handle special cases
-    local icon_name
-    case "${lang,,}" in
-      "c++") icon_name="cpp" ;;
-      "objective-c") icon_name="objectivec" ;;
-      "c#") icon_name="cs" ;;
-      "f#") icon_name="fsharp" ;;
-      "jupyter notebook") icon_name="jupyter" ;;
-      "shell") icon_name="bash" ;;
-      "makefile") icon_name="make" ;;
-      *) icon_name="${lang,,}" ;;
+    # Convert language name to lowercase for comparison
+    local lang_lower="${lang,,}"
+    
+    # Map language names to valid skillicons names
+    case "$lang_lower" in
+      "c++") echo "cpp" ;;
+      "objective-c") echo "c" ;;
+      "c#") echo "cs" ;;
+      "f#") echo "fsharp" ;;
+      "jupyter notebook") echo "py" ;;  # Use Python icon for Jupyter
+      "shell") echo "bash" ;;
+      "makefile") echo "cmake" ;;  # Use CMake icon for Makefile
+      "dockerfile") echo "docker" ;;  # Use Docker icon for Dockerfile
+      "typescript") echo "ts" ;;
+      "javascript") echo "js" ;;
+      "python") echo "py" ;;
+      "html5") echo "html" ;;
+      "css3") echo "css" ;;
+      "markdown") echo "md" ;;
+      "powershell") echo "powershell" ;;
+      "postgresql") echo "postgres" ;;
+      "aiscript") echo "ai" ;;
+      "gitaction") echo "githubactions" ;;
+      "photoshop") echo "ps" ;;
+      "premiere") echo "pr" ;;
+      "intellij") echo "idea" ;;
+      "jupyter") echo "py" ;;  # Use Python icon for Jupyter
+      "batchfile") echo "powershell" ;;  # Use PowerShell icon for Batchfile
+      "glsl") echo "opengl" ;;  # No direct icon, fallback
+      *) 
+        # Check if this language name is in the valid list
+        if echo "ableton activitypub actix adonis ae aiscript alpinejs anaconda androidstudio angular ansible apollo apple appwrite arch arduino astro atom au autocad aws azul azure babel bash bevy bitbucket blender bootstrap bsd bun c cs cpp crystal cassandra clion clojure cloudflare cmake codepen coffeescript css cypress d3 dart debian deno devto discord bots discordjs django docker dotnet dynamodb eclipse elasticsearch electron elixir elysia emacs ember emotion express fastapi fediverse figma firebase flask flutter forth fortran gamemakerstudio gatsby gcp git github githubactions gitlab gmail gherkin go gradle godot grafana graphql gtk gulp haskell haxe haxeflixel heroku hibernate html htmx idea ai instagram ipfs java js jenkins jest jquery kafka kali kotlin ktor kubernetes laravel latex less linkedin linux lit lua md mastodon materialui matlab maven mint misskey mongodb mysql neovim nestjs netlify nextjs nginx nim nix nodejs notion npm nuxtjs obsidian ocaml octave opencv openshift openstack p5js perl ps php phpstorm pinia pkl plan9 planetscale pnpm postgres postman powershell pr prisma processing prometheus pug pycharm py pytorch qt r rabbitmq rails raspberrypi react reactivex redhat redis redux regex remix replit rider robloxstudio rocket rollupjs ros ruby rust sass spring sqlite stackoverflow styledcomponents sublime supabase scala sklearn selenium sentry sequelize sketchup solidity solidjs svelte svg swift symfony tailwind tauri tensorflow terraform threejs twitter ts ubuntu unity unreal v vala vercel vim visualstudio vite vitest vscode vscodium vue vuetify wasm webflow webpack webstorm windicss windows wordpress workers xd yarn yew zig" | grep -q -w "$lang_lower"; then
+          echo "$lang_lower"
+        else
+          # If not in the list, default to a generic icon or return the lowercase name anyway
+          echo "$lang_lower"
+        fi
+        ;;
     esac
-    echo "$icon_name"
   }
   
   # Create a beautiful table with icons
@@ -478,7 +504,11 @@ if [ -f /tmp/all_languages.txt ]; then
         if [ $index -lt $NUM_ITEMS ]; then
           icon_name=$(get_icon_for_language "${LANGUAGES[$index]}")
           count="${COUNTS[$index]}"
-          echo -e "<td align=\"center\"><img src=\"https://skillicons.dev/icons?i=${icon_name}\" alt=\"${LANGUAGES[$index]}\" /><br>${count} repos</td>" >> "$OUTPUT_FILE"
+          
+          # Create a fallback for languages that might not have a valid icon
+          ICON_HTML="<img src=\"https://skillicons.dev/icons?i=${icon_name}\" alt=\"${LANGUAGES[$index]}\" onerror=\"this.onerror=null; this.src='https://img.shields.io/badge/-${LANGUAGES[$index]}-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';\"/>"
+          
+          echo -e "<td align=\"center\">$ICON_HTML<br>${LANGUAGES[$index]} ($count)</td>" >> "$OUTPUT_FILE"
         else
           echo -e "<td></td>" >> "$OUTPUT_FILE"
         fi
