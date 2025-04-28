@@ -415,10 +415,12 @@ if [ -f /tmp/all_languages.txt ]; then
   # Count total repos
   TOTAL_REPOS=$PUBLIC_COUNT
   
-  # Create a markdown table for language statistics that spans the full width
-  echo -e "\n<div class=\"language-table\" style=\"width:100%\">" >> "$OUTPUT_FILE"
-  echo -e "\n| Language | Repository Count | Primary Language In | Last Used | First Used |" >> "$OUTPUT_FILE"
-  echo -e "|----------|------------------|---------------------|-----------|------------|" >> "$OUTPUT_FILE"
+  # Create a markdown table for language statistics with balanced width columns
+  echo -e "\n<table width=\"100%\">" >> "$OUTPUT_FILE"
+  echo -e "<tr>" >> "$OUTPUT_FILE"
+  echo -e "<th align=\"left\" width=\"50%\">Language</th>" >> "$OUTPUT_FILE" 
+  echo -e "<th align=\"center\" width=\"50%\">Repository Count</th>" >> "$OUTPUT_FILE"
+  echo -e "</tr>" >> "$OUTPUT_FILE"
   
   # Check if we have any languages before processing
   if [ -s /tmp/all_languages.txt ]; then
@@ -428,34 +430,22 @@ if [ -f /tmp/all_languages.txt ]; then
         # Remove quotes if present
         language=$(echo "$language" | tr -d '"')
         
-        # Get one repo that uses this language as primary
-        PRIMARY_REPO=$(grep -r "\"$language\"" /tmp/repo_languages_*.json | head -1 | sed 's/.*repo_languages_\(.*\).json.*/\1/')
-        PRIMARY_REPO=${PRIMARY_REPO:-"Various repositories"}
-        
-        # Find first and last used date for this language
-        if [ -f /tmp/repo_entries.txt ]; then
-          # For last used, find the most recently updated repo with this language
-          LAST_USED=$(grep -i "$language" /tmp/repo_entries.txt | sort -t'|' -k5,5r | head -1 | cut -d'|' -f5)
-          LAST_USED=${LAST_USED:-"N/A"}
-          
-          # For first used, find the oldest repo with this language
-          FIRST_USED=$(grep -i "$language" /tmp/repo_entries.txt | sort -t'|' -k4,4 | head -1 | cut -d'|' -f4)
-          FIRST_USED=${FIRST_USED:-"N/A"}
-        else
-          LAST_USED="N/A"
-          FIRST_USED="N/A"
-        fi
-        
         # Add row to table
-        echo "| **$language** | $count | [$PRIMARY_REPO](https://github.com/$USERNAME/$PRIMARY_REPO) | $LAST_USED | $FIRST_USED |" >> "$OUTPUT_FILE"
+        echo -e "<tr>" >> "$OUTPUT_FILE"
+        echo -e "<td align=\"left\"><strong>$language</strong></td>" >> "$OUTPUT_FILE"
+        echo -e "<td align=\"center\">$count</td>" >> "$OUTPUT_FILE"
+        echo -e "</tr>" >> "$OUTPUT_FILE"
       fi
     done
   else
     # No languages detected, add a placeholder row
-    echo "| **No language data available** | - | - | - | - |" >> "$OUTPUT_FILE"
+    echo -e "<tr>" >> "$OUTPUT_FILE"
+    echo -e "<td align=\"left\"><strong>No language data available</strong></td>" >> "$OUTPUT_FILE"
+    echo -e "<td align=\"center\">-</td>" >> "$OUTPUT_FILE"
+    echo -e "</tr>" >> "$OUTPUT_FILE"
   fi
   
-  echo -e "</div>\n" >> "$OUTPUT_FILE"
+  echo -e "</table>" >> "$OUTPUT_FILE"
 fi
 
 # Add language usage trends with theme awareness
