@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# ssh-keygen -t ed25519 -f ./github_actions_key -N ""
-
-
 # Safe division function to prevent divide by zero errors
 safe_division() {
   local numerator=$1
@@ -13,19 +10,6 @@ safe_division() {
     echo "$default_value"
   else
     echo "scale=1; ($numerator / $denominator)" | bc
-  fi
-}
-
-# Safe bar generation function
-generate_bar() {
-  local percentage=$1
-  local max_length=${2:-20}
-  
-  if [ "$percentage" = "0.0" ] || [ -z "$percentage" ]; then
-    echo ""
-  else
-    local bar_length=$(echo "scale=0; ($percentage * $max_length) / 100" | bc)
-    printf '%*s' "$bar_length" | tr ' ' '█'
   fi
 }
 
@@ -79,8 +63,8 @@ cat > "$OUTPUT_FILE" << EOF
 
 Last updated: $(date +"%B %d, %Y")
 
-| Repository | Description | Created | Last Updated | Stars | Forks | Size |
-|------------|-------------|---------|-------------|-------|-------|------|
+| Repository | Description | Created | Last Updated | Stars |
+|------------|-------------|---------|-------------|-------|
 EOF
 
 # Process repositories
@@ -93,7 +77,6 @@ gh repo list --limit 1000 --json name,description,isPrivate,stargazerCount,forkC
 PUBLIC_COUNT=0
 TOTAL_STARS=0
 TOTAL_FORKS=0
-TOTAL_SIZE=0
 MOST_STARRED=""
 MOST_STARRED_COUNT=0
 MOST_FORKED=""
@@ -121,7 +104,6 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   forks=$(echo "$repo_entry" | jq -r '.forkCount')
   updated=$(echo "$repo_entry" | jq -r '.updatedAt' | cut -dT -f1)
   created=$(echo "$repo_entry" | jq -r '.createdAt' | cut -dT -f1)
-  size=$(echo "$repo_entry" | jq -r '.diskUsage')
   
   # Skip private repositories
   if [ "$is_private" = "true" ]; then
@@ -132,7 +114,6 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
   TOTAL_STARS=$((TOTAL_STARS + stars))
   TOTAL_FORKS=$((TOTAL_FORKS + forks))
-  TOTAL_SIZE=$((TOTAL_SIZE + size))
   
   # Track most starred and forked repos
   if [ "$stars" -gt "$MOST_STARRED_COUNT" ]; then
@@ -148,17 +129,8 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   # Handle missing values
   description=${description:-"*No description*"}
   stars=${stars:-0}
-  forks=${forks:-0}
   updated=${updated:-"Unknown"}
   created=${created:-"Unknown"}
-  size=${size:-0}
-  
-  # Convert size from KB to MB if larger than 1000
-  if [ "$size" -gt 1000 ]; then
-    size_display="$(echo "scale=1; $size/1024" | bc) MB"
-  else
-    size_display="${size} KB"
-  fi
   
   # Truncate long descriptions
   if [ ${#description} -gt 100 ]; then
@@ -171,8 +143,8 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   # Get primary language for repository
   primary_lang=$(gh api repos/$USERNAME/$repo_name --jq '.language')
   
-  # Add language and size information to the listing
-  echo "$created|[$repo_name](https://github.com/$USERNAME/$repo_name)|$description|$created|$updated|$stars|$forks|$size_display|$primary_lang" >> /tmp/repo_entries.txt
+  # Add language information to the listing
+  echo "$created|[$repo_name](https://github.com/$USERNAME/$repo_name)|$description|$created|$updated|$stars|$primary_lang" >> /tmp/repo_entries.txt
   
   # Get contributors count
   contributors_count=$(gh api repos/$USERNAME/$repo_name/contributors --jq 'length')
@@ -183,11 +155,11 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
 done
 
 # Save stats at once after all repos are processed
-echo "$PUBLIC_COUNT $TOTAL_STARS $TOTAL_FORKS $TOTAL_SIZE $MOST_STARRED $MOST_STARRED_COUNT $MOST_FORKED $MOST_FORKED_COUNT" > /tmp/repo_stats.txt
+echo "$PUBLIC_COUNT $TOTAL_STARS $TOTAL_FORKS $MOST_STARRED $MOST_STARRED_COUNT $MOST_FORKED $MOST_FORKED_COUNT" > /tmp/repo_stats.txt
 
 # Sort by creation date in reverse order (newest first) and append to markdown
 if [ -f /tmp/repo_entries.txt ]; then
-  sort -r /tmp/repo_entries.txt | while IFS="|" read -r sort_date repo_link desc created updated stars forks size lang; do
+  sort -r /tmp/repo_entries.txt | while IFS="|" read -r sort_date repo_link desc created updated stars lang; do
     # Add language badge if available
     if [ "$lang" != "null" ] && [ -n "$lang" ]; then
       # Match language to appropriate color
@@ -207,7 +179,7 @@ if [ -f /tmp/repo_entries.txt ]; then
       desc="$desc $lang_badge"
     fi
     
-    echo "| $repo_link | $desc | $created | $updated | $stars | $forks | $size |" >> "$OUTPUT_FILE"
+    echo "| $repo_link | $desc | $created | $updated | $stars |" >> "$OUTPUT_FILE"
   done
 fi
 
@@ -218,21 +190,12 @@ echo "" >> "$OUTPUT_FILE"
 
 # Read the calculated statistics
 if [ -f /tmp/repo_stats.txt ]; then
-  read PUBLIC_COUNT TOTAL_STARS TOTAL_FORKS TOTAL_SIZE MOST_STARRED MOST_STARRED_COUNT MOST_FORKED MOST_FORKED_COUNT < /tmp/repo_stats.txt
+  read PUBLIC_COUNT TOTAL_STARS TOTAL_FORKS MOST_STARRED MOST_STARRED_COUNT MOST_FORKED MOST_FORKED_COUNT < /tmp/repo_stats.txt
 fi
 
 # Count all repositories for total
 TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
 PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
-
-# Calculate total size in human-readable format
-if [ "$TOTAL_SIZE" -gt 1000000 ]; then
-  TOTAL_SIZE_DISPLAY="$(echo "scale=2; $TOTAL_SIZE/1048576" | bc) GB"
-elif [ "$TOTAL_SIZE" -gt 1000 ]; then
-  TOTAL_SIZE_DISPLAY="$(echo "scale=2; $TOTAL_SIZE/1024" | bc) MB"
-else
-  TOTAL_SIZE_DISPLAY="$TOTAL_SIZE KB"
-fi
 
 # Create summary cards with emojis - with adaptive theming
 cat >> "$OUTPUT_FILE" << EOF
@@ -267,20 +230,6 @@ cat >> "$OUTPUT_FILE" << EOF
           <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-$TOTAL_STARS-yellow?style=for-the-badge&color=f1c40f">
           <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-$TOTAL_STARS-yellow?style=for-the-badge&color=f1c40f">
           <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-$TOTAL_STARS-yellow?style=for-the-badge&color=f1c40f">
-        </picture>
-      </td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Forks-$TOTAL_FORKS-orange?style=for-the-badge&color=e67e22">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Forks-$TOTAL_FORKS-orange?style=for-the-badge&color=e67e22">
-          <img alt="Total Forks" src="https://img.shields.io/badge/Total%20Forks-$TOTAL_FORKS-orange?style=for-the-badge&color=e67e22">
-        </picture>
-      </td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Size-$TOTAL_SIZE_DISPLAY-lightgrey?style=for-the-badge&color=95a5a6">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Size-$TOTAL_SIZE_DISPLAY-lightgrey?style=for-the-badge&color=95a5a6">
-          <img alt="Total Size" src="https://img.shields.io/badge/Total%20Size-$TOTAL_SIZE_DISPLAY-lightgrey?style=for-the-badge&color=95a5a6">
         </picture>
       </td>
     </tr>
@@ -367,26 +316,17 @@ if [ -f /tmp/all_languages.txt ]; then
   TOTAL_REPOS=$PUBLIC_COUNT
   
   # Create a markdown table for language statistics
-  echo -e "\n| Language | Repository Count | Percentage | Bar |" >> "$OUTPUT_FILE"
-  echo -e "|----------|------------------|------------|-----|" >> "$OUTPUT_FILE"
+  echo -e "\n| Language | Repository Count |" >> "$OUTPUT_FILE"
+  echo -e "|----------|------------------|" >> "$OUTPUT_FILE"
   
-  # Generate statistics with visual bars
+  # Generate statistics
   cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -15 | while read -r count language; do
     if [ -n "$language" ]; then
       # Remove quotes if present
       language=$(echo "$language" | tr -d '"')
       
-      # Calculate percentage of repos using this language
-      if [ "$TOTAL_REPOS" -eq 0 ] || [ -z "$TOTAL_REPOS" ]; then
-        PERCENTAGE="0.0"
-        BAR=""
-      else
-        PERCENTAGE=$(safe_division "($count * 100)" "$TOTAL_REPOS")
-        BAR=$(generate_bar "$PERCENTAGE")
-      fi
-      
-      # Add row to table with visual bar
-      echo "| **$language** | $count | $PERCENTAGE% | $BAR |" >> "$OUTPUT_FILE"
+      # Add row to table
+      echo "| **$language** | $count |" >> "$OUTPUT_FILE"
     fi
   done
 fi
@@ -453,9 +393,8 @@ echo -e "</div>\n" >> "$OUTPUT_FILE"
 
 echo -e "\n<div align=\"center\"><small>Last updated: $(date '+%B %d, %Y')</small></div>" >> "$OUTPUT_FILE"
 
-
 # Clean up temporary files
-rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/all_languages_with_bytes.txt /tmp/language_totals.txt /tmp/language_sorted.txt
+rm -f /tmp/repo_data.json /tmp/repo_entries.txt /tmp/repo_stats.txt /tmp/all_languages.txt /tmp/contributors.txt /tmp/language_totals.txt /tmp/language_sorted.txt
 rm -f /tmp/repo_languages_*
 
 echo "README generation complete! Output saved to $OUTPUT_FILE"
