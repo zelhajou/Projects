@@ -124,64 +124,44 @@ Language composition across all repositories:
 
 <table width="100%">
 <tr>
-<th align="left" width="50%">Language</th>
-<th align="center" width="50%">Repository Count</th>
+<td align="center"><strong>Makefile</strong></td>
+<td align="center"><strong>Shell</strong></td>
+<td align="center"><strong>C</strong></td>
+<td align="center"><strong>Python</strong></td>
+<td align="center"><strong>JavaScript</strong></td>
+<td align="center"><strong>Dockerfile</strong></td>
+<td align="center"><strong>CSS</strong></td>
+<td align="center"><strong>C++</strong></td>
 </tr>
 <tr>
-<td align="left"><strong>Makefile</strong></td>
-<td align="center">8</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=make" alt="Makefile" /><br>8 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" /><br>5 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=c" alt="C" /><br>5 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=python" alt="Python" /><br>4 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" /><br>4 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=dockerfile" alt="Dockerfile" /><br>4 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=css" alt="CSS" /><br>3 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cpp" alt="C++" /><br>3 repos</td>
 </tr>
 <tr>
-<td align="left"><strong>Shell</strong></td>
-<td align="center">5</td>
+<td align="center"><strong>HTML</strong></td>
+<td align="center"><strong>TypeScript</strong></td>
+<td align="center"><strong>Jupyter Notebook</strong></td>
+<td align="center"><strong>GLSL</strong></td>
+<td align="center"><strong>CMake</strong></td>
+<td align="center"><strong>Batchfile</strong></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td align="left"><strong>C</strong></td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td align="left"><strong>Python</strong></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left"><strong>JavaScript</strong></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left"><strong>Dockerfile</strong></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="left"><strong>CSS</strong></td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="left"><strong>C++</strong></td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="left"><strong>HTML</strong></td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="left"><strong>TypeScript</strong></td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left"><strong>Jupyter Notebook</strong></td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left"><strong>GLSL</strong></td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left"><strong>CMake</strong></td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left"><strong>Batchfile</strong></td>
-<td align="center">1</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" /><br>2 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" /><br>1 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=jupyter" alt="Jupyter Notebook" /><br>1 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=glsl" alt="GLSL" /><br>1 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="CMake" /><br>1 repos</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=batchfile" alt="Batchfile" /><br>1 repos</td>
+<td></td>
+<td></td>
 </tr>
 </table>
 
