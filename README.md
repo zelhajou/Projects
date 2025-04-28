@@ -122,26 +122,68 @@ Language composition across all repositories:
 
 ### Detailed Language Breakdown
 
-<div class="language-table" style="width:100%">
-
-| Language | Repository Count | Primary Language In | Last Used | First Used |
-|----------|------------------|---------------------|-----------|------------|
-| **Makefile** | 8 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | N/A | N/A |
-| **Shell** | 5 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 2025-04-24 | 2023-04-18 |
-| **C** | 5 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | 2025-04-26 | 2022-10-17 |
-| **Python** | 4 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 2025-04-26 | 2024-12-30 |
-| **JavaScript** | 4 | [SukStack](https://github.com/zelhajou/SukStack) | 2025-04-23 | 2023-03-28 |
-| **Dockerfile** | 4 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | N/A | N/A |
-| **CSS** | 3 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | N/A | N/A |
-| **C++** | 3 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | 2025-04-11 | 2024-03-14 |
-| **HTML** | 2 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | N/A | N/A |
-| **TypeScript** | 1 | [web-42recall](https://github.com/zelhajou/web-42recall) | 2025-04-18 | 2024-10-24 |
-| **Jupyter Notebook** | 1 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | N/A | N/A |
-| **GLSL** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
-| **CMake** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
-| **Batchfile** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
-</div>
-
+<table width="100%">
+<tr>
+<th align="left" width="50%">Language</th>
+<th align="center" width="50%">Repository Count</th>
+</tr>
+<tr>
+<td align="left"><strong>Makefile</strong></td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="left"><strong>Shell</strong></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left"><strong>C</strong></td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left"><strong>Python</strong></td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left"><strong>JavaScript</strong></td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left"><strong>Dockerfile</strong></td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left"><strong>CSS</strong></td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left"><strong>C++</strong></td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left"><strong>HTML</strong></td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left"><strong>TypeScript</strong></td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left"><strong>Jupyter Notebook</strong></td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left"><strong>GLSL</strong></td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left"><strong>CMake</strong></td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left"><strong>Batchfile</strong></td>
+<td align="center">1</td>
+</tr>
+</table>
 
 ### Language Distribution Visualization
 
