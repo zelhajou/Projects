@@ -24,28 +24,28 @@
 
 Last updated: April 28, 2025
 
-| Repository | Description | Created | Last Updated | Stars | Forks | Size |
-|------------|-------------|---------|-------------|-------|-------|------|
-| [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 | 0 | 1.0 MB |
-| [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-04-26 | 0 | 0 | 19 KB |
-| [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-04-23 | 3 | 1 | 591 KB |
-| [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-04-26 | 0 | 0 | 274 KB |
-| [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 | 0 | 4.3 MB |
-| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 | 1 | 74.1 MB |
-| [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-04-24 | 4 | 0 | 24.6 MB |
-| [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 | 1 | 38.3 MB |
-| [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-04-11 | 3 | 0 | 7.3 MB |
-| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-04-24 | 36 | 3 | 4.5 MB |
-| [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-03-05 | 3 | 0 | 1.6 MB |
-| [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-03-05 | 5 | 0 | 196.2 MB |
-| [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-03-15 | 7 | 0 | 1.6 MB |
-| [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-02-24 | 3 | 0 | 4.1 MB |
-| [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 | 0 | 35 KB |
-| [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 | 1 | 69 KB |
-| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-04-20 | 18 | 1 | 74 KB |
-| [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-02-03 | 2 | 0 | 1.7 MB |
-| [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-02-03 | 5 | 0 | 76.0 MB |
-| [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2025-04-24 | 9 | 0 | 5.7 MB |
+| Repository | Description | Created | Last Updated | Stars |
+|------------|-------------|---------|-------------|-------|
+| [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 |
+| [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-04-26 | 0 |
+| [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-04-23 | 3 |
+| [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-04-26 | 0 |
+| [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
+| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 |
+| [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-04-24 | 4 |
+| [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 |
+| [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-04-11 | 3 |
+| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-04-24 | 36 |
+| [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-03-05 | 3 |
+| [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-03-05 | 5 |
+| [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-03-15 | 7 |
+| [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-02-24 | 3 |
+| [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 |
+| [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
+| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-04-20 | 18 |
+| [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-02-03 | 2 |
+| [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-02-03 | 5 |
+| [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2025-04-24 | 9 |
 
 ## Repository Statistics
 
@@ -80,20 +80,6 @@ Last updated: April 28, 2025
           <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
           <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
           <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
-        </picture>
-      </td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Forks-0-orange?style=for-the-badge&color=e67e22">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Forks-0-orange?style=for-the-badge&color=e67e22">
-          <img alt="Total Forks" src="https://img.shields.io/badge/Total%20Forks-0-orange?style=for-the-badge&color=e67e22">
-        </picture>
-      </td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Size-0 KB-lightgrey?style=for-the-badge&color=95a5a6">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Size-0 KB-lightgrey?style=for-the-badge&color=95a5a6">
-          <img alt="Total Size" src="https://img.shields.io/badge/Total%20Size-0 KB-lightgrey?style=for-the-badge&color=95a5a6">
         </picture>
       </td>
     </tr>
@@ -137,22 +123,22 @@ Language composition across all repositories:
 
 ### Detailed Language Breakdown
 
-| Language | Repository Count | Percentage | Bar |
-|----------|------------------|------------|-----|
-| **Makefile** | 8 | 0.0% |  |
-| **Shell** | 5 | 0.0% |  |
-| **C** | 5 | 0.0% |  |
-| **Python** | 4 | 0.0% |  |
-| **JavaScript** | 4 | 0.0% |  |
-| **Dockerfile** | 4 | 0.0% |  |
-| **CSS** | 3 | 0.0% |  |
-| **C++** | 3 | 0.0% |  |
-| **HTML** | 2 | 0.0% |  |
-| **TypeScript** | 1 | 0.0% |  |
-| **Jupyter Notebook** | 1 | 0.0% |  |
-| **GLSL** | 1 | 0.0% |  |
-| **CMake** | 1 | 0.0% |  |
-| **Batchfile** | 1 | 0.0% |  |
+| Language | Repository Count |
+|----------|------------------|
+| **Makefile** | 8 |
+| **Shell** | 5 |
+| **C** | 5 |
+| **Python** | 4 |
+| **JavaScript** | 4 |
+| **Dockerfile** | 4 |
+| **CSS** | 3 |
+| **C++** | 3 |
+| **HTML** | 2 |
+| **TypeScript** | 1 |
+| **Jupyter Notebook** | 1 |
+| **GLSL** | 1 |
+| **CMake** | 1 |
+| **Batchfile** | 1 |
 
 ### Language Distribution Visualization
 
