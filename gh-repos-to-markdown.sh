@@ -36,6 +36,15 @@ OUTPUT_FILE="github_repositories_complete.md"
 # Repositories to ignore (space-separated list)
 IGNORED_REPOS="zelhajou Projects"
 
+# Set initial variables
+PUBLIC_COUNT=0
+TOTAL_STARS=0
+TOTAL_FORKS=0
+MOST_STARRED=""
+MOST_STARRED_COUNT=0
+MOST_FORKED=""
+MOST_FORKED_COUNT=0
+
 # Get GitHub username
 USERNAME=$(gh api user --jq '.login')
 FULL_NAME=$(gh api user --jq '.name')
@@ -90,14 +99,38 @@ echo "Fetching repository data..."
 # Get list of repos with createdAt field included
 gh repo list --limit 1000 --json name,description,isPrivate,stargazerCount,forkCount,updatedAt,createdAt,diskUsage > /tmp/repo_data.json
 
-# Save statistics data for later use
-PUBLIC_COUNT=0
-TOTAL_STARS=0
-TOTAL_FORKS=0
-MOST_STARRED=""
-MOST_STARRED_COUNT=0
-MOST_FORKED=""
-MOST_FORKED_COUNT=0
+# Count all repositories for total
+gh repo list --limit 1000 --json name,isPrivate --jq '.[] | select(.isPrivate==false) | .name' > /tmp/public_repos.txt
+PUBLIC_COUNT=$(wc -l < /tmp/public_repos.txt | tr -d ' ')
+# Handle case where count is zero
+PUBLIC_COUNT=${PUBLIC_COUNT:-0}
+
+# Calculate all stars across all repos
+if [ -f /tmp/public_repos.txt ]; then
+  while read -r repo_name; do
+    if [ -n "$repo_name" ]; then
+      # Get stars for this repo
+      stars=$(gh api repos/$USERNAME/$repo_name --jq '.stargazers_count')
+      # Ensure stars is a number
+      if [[ "$stars" =~ ^[0-9]+$ ]]; then
+        TOTAL_STARS=$((TOTAL_STARS + stars))
+      fi
+    fi
+  done < /tmp/public_repos.txt
+fi
+
+# Get total repo count
+TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
+# Handle case where total count is zero
+TOTAL_REPOS=${TOTAL_REPOS:-0}
+
+# Calculate private repos, ensuring we don't get negative values
+if [ "$TOTAL_REPOS" -ge "$PUBLIC_COUNT" ]; then
+  PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
+else
+  # If there's an inconsistency in counts, set private to zero
+  PRIVATE_REPOS=0
+fi
 
 # Process JSON data, create a temporary file for sorting
 jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
@@ -128,7 +161,6 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
   fi
 
   # Track statistics for public repositories
-  PUBLIC_COUNT=$((PUBLIC_COUNT + 1))
   # Convert stars and forks to numbers, default to 0 if empty or not a number
   if [[ "$stars" =~ ^[0-9]+$ ]]; then
     TOTAL_STARS=$((TOTAL_STARS + stars))
@@ -252,19 +284,6 @@ if [ -f /tmp/repo_stats.txt ]; then
   read PUBLIC_COUNT TOTAL_STARS TOTAL_FORKS MOST_STARRED MOST_STARRED_COUNT MOST_FORKED MOST_FORKED_COUNT < /tmp/repo_stats.txt
 fi
 
-# Count all repositories for total
-TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
-# Handle case where total count is zero
-TOTAL_REPOS=${TOTAL_REPOS:-0}
-
-# Calculate private repos, ensuring we don't get negative values
-if [ "$TOTAL_REPOS" -ge "$PUBLIC_COUNT" ]; then
-  PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
-else
-  # If there's an inconsistency in counts, set private to zero
-  PRIVATE_REPOS=0
-fi
-
 # Create summary cards with emojis - with adaptive theming
 cat >> "$OUTPUT_FILE" << EOF
 <div align="center">
@@ -355,7 +374,7 @@ if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
       fi
     fi
   fi
-  echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
+  echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR" >> "$OUTPUT_FILE"
 fi
 
 # Generate contribution activity heatmap link with theme variants
