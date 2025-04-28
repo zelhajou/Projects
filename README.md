@@ -122,22 +122,26 @@ Language composition across all repositories:
 
 ### Detailed Language Breakdown
 
-| Language | Repository Count |
-|----------|------------------|
-| **Makefile** | 8 |
-| **Shell** | 5 |
-| **C** | 5 |
-| **Python** | 4 |
-| **JavaScript** | 4 |
-| **Dockerfile** | 4 |
-| **CSS** | 3 |
-| **C++** | 3 |
-| **HTML** | 2 |
-| **TypeScript** | 1 |
-| **Jupyter Notebook** | 1 |
-| **GLSL** | 1 |
-| **CMake** | 1 |
-| **Batchfile** | 1 |
+<div class="language-table" style="width:100%">
+
+| Language | Repository Count | Primary Language In | Last Used | First Used |
+|----------|------------------|---------------------|-----------|------------|
+| **Makefile** | 8 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | N/A | N/A |
+| **Shell** | 5 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 2025-04-24 | 2023-04-18 |
+| **C** | 5 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | 2025-04-26 | 2022-10-17 |
+| **Python** | 4 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 2025-04-26 | 2024-12-30 |
+| **JavaScript** | 4 | [SukStack](https://github.com/zelhajou/SukStack) | 2025-04-23 | 2023-03-28 |
+| **Dockerfile** | 4 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | N/A | N/A |
+| **CSS** | 3 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | N/A | N/A |
+| **C++** | 3 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | 2025-04-11 | 2024-03-14 |
+| **HTML** | 2 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | N/A | N/A |
+| **TypeScript** | 1 | [web-42recall](https://github.com/zelhajou/web-42recall) | 2025-04-18 | 2024-10-24 |
+| **Jupyter Notebook** | 1 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | N/A | N/A |
+| **GLSL** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
+| **CMake** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
+| **Batchfile** | 1 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | N/A | N/A |
+</div>
+
 
 ### Language Distribution Visualization
 
