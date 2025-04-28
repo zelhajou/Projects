@@ -61,25 +61,25 @@ Last updated: April 28, 2025
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Public%20Repositories-0-green?style=for-the-badge&color=2ecc71">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Public%20Repositories-0-green?style=for-the-badge&color=2ecc71">
-          <img alt="Public Repositories" src="https://img.shields.io/badge/Public%20Repositories-0-green?style=for-the-badge&color=2ecc71">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Public%20Repositories-22-green?style=for-the-badge&color=2ecc71">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Public%20Repositories-22-green?style=for-the-badge&color=2ecc71">
+          <img alt="Public Repositories" src="https://img.shields.io/badge/Public%20Repositories-22-green?style=for-the-badge&color=2ecc71">
         </picture>
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-39-red?style=for-the-badge&color=e74c3c">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-39-red?style=for-the-badge&color=e74c3c">
-          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-39-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-17-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-17-red?style=for-the-badge&color=e74c3c">
+          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-17-red?style=for-the-badge&color=e74c3c">
         </picture>
       </td>
     </tr>
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-0-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-107-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-107-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-107-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -93,7 +93,7 @@ Last updated: April 28, 2025
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
 - 🆕 **Most recent repository:** [SukStack](https://github.com/zelhajou/SukStack) created on 2025-04-07
 - 🎂 **GitHub account age:** Approximately 7 years (created on 2018-06-05)
-- 📊 **Average creation rate:** 0 repositories in 7 years repositories per year
+- 📊 **Average creation rate:** 3.1
 
 ### Contribution Activity
 
