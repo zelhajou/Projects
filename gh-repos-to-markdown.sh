@@ -415,34 +415,79 @@ if [ -f /tmp/all_languages.txt ]; then
   # Count total repos
   TOTAL_REPOS=$PUBLIC_COUNT
   
-  # Create a markdown table for language statistics with balanced width columns
-  echo -e "\n<table width=\"100%\">" >> "$OUTPUT_FILE"
-  echo -e "<tr>" >> "$OUTPUT_FILE"
-  echo -e "<th align=\"left\" width=\"50%\">Language</th>" >> "$OUTPUT_FILE" 
-  echo -e "<th align=\"center\" width=\"50%\">Repository Count</th>" >> "$OUTPUT_FILE"
-  echo -e "</tr>" >> "$OUTPUT_FILE"
+  # Function to get icon for language
+  get_icon_for_language() {
+    local lang="$1"
+    # Convert language name to lowercase and handle special cases
+    local icon_name
+    case "${lang,,}" in
+      "c++") icon_name="cpp" ;;
+      "objective-c") icon_name="objectivec" ;;
+      "c#") icon_name="cs" ;;
+      "f#") icon_name="fsharp" ;;
+      "jupyter notebook") icon_name="jupyter" ;;
+      "shell") icon_name="bash" ;;
+      "makefile") icon_name="make" ;;
+      *) icon_name="${lang,,}" ;;
+    esac
+    echo "$icon_name"
+  }
   
-  # Check if we have any languages before processing
+  # Create a beautiful table with icons
+  echo -e "\n<table width=\"100%\">" >> "$OUTPUT_FILE"
+  
+  # Process all languages
   if [ -s /tmp/all_languages.txt ]; then
-    # Generate statistics
-    cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -15 | while read -r count language; do
+    # Generate statistics and prepare languages array
+    LANGUAGES=()
+    COUNTS=()
+    
+    while read -r count language; do
       if [ -n "$language" ]; then
         # Remove quotes if present
         language=$(echo "$language" | tr -d '"')
-        
-        # Add row to table
-        echo -e "<tr>" >> "$OUTPUT_FILE"
-        echo -e "<td align=\"left\"><strong>$language</strong></td>" >> "$OUTPUT_FILE"
-        echo -e "<td align=\"center\">$count</td>" >> "$OUTPUT_FILE"
-        echo -e "</tr>" >> "$OUTPUT_FILE"
+        LANGUAGES+=("$language")
+        COUNTS+=("$count")
       fi
+    done < <(cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -32)
+    
+    # Calculate rows and columns for a balanced table
+    # We'll aim for 8 columns
+    NUM_ITEMS=${#LANGUAGES[@]}
+    COLUMNS=8
+    ROWS=$(( (NUM_ITEMS + COLUMNS - 1) / COLUMNS ))
+    
+    # Generate each row
+    for ((row=0; row<ROWS; row++)); do
+      # First write the language names row
+      echo -e "<tr>" >> "$OUTPUT_FILE"
+      for ((col=0; col<COLUMNS; col++)); do
+        index=$((row * COLUMNS + col))
+        if [ $index -lt $NUM_ITEMS ]; then
+          echo -e "<td align=\"center\"><strong>${LANGUAGES[$index]}</strong></td>" >> "$OUTPUT_FILE"
+        else
+          echo -e "<td></td>" >> "$OUTPUT_FILE"
+        fi
+      done
+      echo -e "</tr>" >> "$OUTPUT_FILE"
+      
+      # Then write the icon row
+      echo -e "<tr>" >> "$OUTPUT_FILE"
+      for ((col=0; col<COLUMNS; col++)); do
+        index=$((row * COLUMNS + col))
+        if [ $index -lt $NUM_ITEMS ]; then
+          icon_name=$(get_icon_for_language "${LANGUAGES[$index]}")
+          count="${COUNTS[$index]}"
+          echo -e "<td align=\"center\"><img src=\"https://skillicons.dev/icons?i=${icon_name}\" alt=\"${LANGUAGES[$index]}\" /><br>${count} repos</td>" >> "$OUTPUT_FILE"
+        else
+          echo -e "<td></td>" >> "$OUTPUT_FILE"
+        fi
+      done
+      echo -e "</tr>" >> "$OUTPUT_FILE"
     done
   else
     # No languages detected, add a placeholder row
-    echo -e "<tr>" >> "$OUTPUT_FILE"
-    echo -e "<td align=\"left\"><strong>No language data available</strong></td>" >> "$OUTPUT_FILE"
-    echo -e "<td align=\"center\">-</td>" >> "$OUTPUT_FILE"
-    echo -e "</tr>" >> "$OUTPUT_FILE"
+    echo -e "<tr><td align=\"center\">No language data available</td></tr>" >> "$OUTPUT_FILE"
   fi
   
   echo -e "</table>" >> "$OUTPUT_FILE"
