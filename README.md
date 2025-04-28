@@ -93,7 +93,7 @@ Last updated: April 28, 2025
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
 - 🆕 **Most recent repository:** [SukStack](https://github.com/zelhajou/SukStack) created on 2025-04-07
 - 🎂 **GitHub account age:** Approximately 7 years (created on 2018-06-05)
-- 📊 **Average creation rate:** approximately 0 over 7 years repositories per year
+- 📊 **Average creation rate:** 0 repositories in 7 years repositories per year
 
 ### Contribution Activity
 
