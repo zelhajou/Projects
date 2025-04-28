@@ -508,7 +508,7 @@ if [ -f /tmp/all_languages.txt ]; then
           # Create a fallback for languages that might not have a valid icon
           ICON_HTML="<img src=\"https://skillicons.dev/icons?i=${icon_name}\" alt=\"${LANGUAGES[$index]}\" onerror=\"this.onerror=null; this.src='https://img.shields.io/badge/-${LANGUAGES[$index]}-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';\"/>"
           
-          echo -e "<td align=\"center\">$ICON_HTML<br>${LANGUAGES[$index]} ($count)</td>" >> "$OUTPUT_FILE"
+          echo -e "<td align=\"center\">$ICON_HTML<br>${LANGUAGES[$index]}<br>($count repos)</td>" >> "$OUTPUT_FILE"
         else
           echo -e "<td></td>" >> "$OUTPUT_FILE"
         fi
