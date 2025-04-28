@@ -9,7 +9,24 @@ safe_division() {
   if [ "$denominator" -eq 0 ]; then
     echo "$default_value"
   else
-    echo "scale=1; ($numerator / $denominator)" | bc
+    # Calculate the division with scale=1
+    local result=$(echo "scale=1; ($numerator / $denominator)" | bc)
+    
+    # If the result is "0" or "0.0", try with higher precision
+    if [ "$result" = "0" ] || [ "$result" = "0.0" ] || [ "$result" = ".0" ]; then
+      result=$(echo "scale=2; ($numerator / $denominator)" | bc)
+      
+      # If still zero, use a small non-zero value
+      if [ "$result" = "0" ] || [ "$result" = "0.0" ] || [ "$result" = "0.00" ] || [ "$result" = ".0" ] || [ "$result" = ".00" ]; then
+        if [ "$numerator" -ne 0 ]; then
+          result="0.1" # Return a small non-zero value if numerator isn't zero
+        else
+          result="0"
+        fi
+      fi
+    fi
+    
+    echo "$result"
   fi
 }
 
@@ -155,6 +172,38 @@ jq -c '.[]' /tmp/repo_data.json | while read -r repo_entry; do
 done
 
 # Save stats at once after all repos are processed
+if [ -z "$MOST_STARRED" ]; then
+  # If most starred repo is empty, find one
+  if [ -f /tmp/repo_entries.txt ]; then
+    # Get the repo with the highest stars
+    HIGHEST_STARS_LINE=$(sort -t'|' -k6,6nr /tmp/repo_entries.txt | head -1)
+    if [ -n "$HIGHEST_STARS_LINE" ]; then
+      MOST_STARRED=$(echo "$HIGHEST_STARS_LINE" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+      MOST_STARRED_COUNT=$(echo "$HIGHEST_STARS_LINE" | cut -d'|' -f6)
+    fi
+  fi
+fi
+
+if [ -z "$MOST_FORKED" ]; then
+  # If we have repos but no most forked, set to the first repo
+  if [ -f /tmp/repo_entries.txt ]; then
+    FIRST_REPO_LINE=$(head -1 /tmp/repo_entries.txt)
+    if [ -n "$FIRST_REPO_LINE" ]; then
+      MOST_FORKED=$(echo "$FIRST_REPO_LINE" | cut -d'|' -f2 | sed -n 's/\[\(.*\)\].*/\1/p')
+      MOST_FORKED_COUNT=0
+    fi
+  fi
+fi
+
+# Make sure we have valid values for all stats
+PUBLIC_COUNT=${PUBLIC_COUNT:-0}
+TOTAL_STARS=${TOTAL_STARS:-0}
+TOTAL_FORKS=${TOTAL_FORKS:-0}
+MOST_STARRED=${MOST_STARRED:-"No repositories"}
+MOST_STARRED_COUNT=${MOST_STARRED_COUNT:-0}
+MOST_FORKED=${MOST_FORKED:-"No repositories"}
+MOST_FORKED_COUNT=${MOST_FORKED_COUNT:-0}
+
 echo "$PUBLIC_COUNT $TOTAL_STARS $TOTAL_FORKS $MOST_STARRED $MOST_STARRED_COUNT $MOST_FORKED $MOST_FORKED_COUNT" > /tmp/repo_stats.txt
 
 # Sort by creation date in reverse order (newest first) and append to markdown
@@ -195,7 +244,16 @@ fi
 
 # Count all repositories for total
 TOTAL_REPOS=$(gh repo list --limit 1000 | wc -l | tr -d ' ')
-PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
+# Handle case where total count is zero
+TOTAL_REPOS=${TOTAL_REPOS:-0}
+
+# Calculate private repos, ensuring we don't get negative values
+if [ "$TOTAL_REPOS" -ge "$PUBLIC_COUNT" ]; then
+  PRIVATE_REPOS=$((TOTAL_REPOS - PUBLIC_COUNT))
+else
+  # If there's an inconsistency in counts, set private to zero
+  PRIVATE_REPOS=0
+fi
 
 # Create summary cards with emojis - with adaptive theming
 cat >> "$OUTPUT_FILE" << EOF
@@ -225,7 +283,7 @@ cat >> "$OUTPUT_FILE" << EOF
       </td>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" colspan="3">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-$TOTAL_STARS-yellow?style=for-the-badge&color=f1c40f">
           <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-$TOTAL_STARS-yellow?style=for-the-badge&color=f1c40f">
@@ -238,7 +296,6 @@ cat >> "$OUTPUT_FILE" << EOF
 
 ### Notable Repositories
 - 🌟 **Most starred:** [$MOST_STARRED](https://github.com/$USERNAME/$MOST_STARRED) with $MOST_STARRED_COUNT stars
-- 🍴 **Most forked:** [$MOST_FORKED](https://github.com/$USERNAME/$MOST_FORKED) with $MOST_FORKED_COUNT forks
 EOF
 
 # Add repository age statistics
@@ -273,6 +330,15 @@ if [ -f /tmp/repo_entries.txt ] && [ -s /tmp/repo_entries.txt ]; then
     REPOS_PER_YEAR="$PUBLIC_COUNT (account created this year)"
   else
     REPOS_PER_YEAR=$(safe_division "$PUBLIC_COUNT" "$ACCOUNT_AGE")
+    
+    # Make sure we don't display "0" for the repos per year
+    if [ "$REPOS_PER_YEAR" = "0.0" ] || [ "$REPOS_PER_YEAR" = "0" ]; then
+      REPOS_PER_YEAR=$(bc <<< "scale=1; $PUBLIC_COUNT / $ACCOUNT_AGE")
+      # If still zero, use a more user-friendly format
+      if [ "$REPOS_PER_YEAR" = "0" ] || [ "$REPOS_PER_YEAR" = ".0" ] || [ "$REPOS_PER_YEAR" = "0.0" ]; then
+        REPOS_PER_YEAR="approximately $PUBLIC_COUNT over $ACCOUNT_AGE years"
+      fi
+    fi
   fi
   echo "- 📊 **Average creation rate:** $REPOS_PER_YEAR repositories per year" >> "$OUTPUT_FILE"
 fi
@@ -319,16 +385,22 @@ if [ -f /tmp/all_languages.txt ]; then
   echo -e "\n| Language | Repository Count |" >> "$OUTPUT_FILE"
   echo -e "|----------|------------------|" >> "$OUTPUT_FILE"
   
-  # Generate statistics
-  cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -15 | while read -r count language; do
-    if [ -n "$language" ]; then
-      # Remove quotes if present
-      language=$(echo "$language" | tr -d '"')
-      
-      # Add row to table
-      echo "| **$language** | $count |" >> "$OUTPUT_FILE"
-    fi
-  done
+  # Check if we have any languages before processing
+  if [ -s /tmp/all_languages.txt ]; then
+    # Generate statistics
+    cat /tmp/all_languages.txt | sort | uniq -c | sort -nr | head -15 | while read -r count language; do
+      if [ -n "$language" ]; then
+        # Remove quotes if present
+        language=$(echo "$language" | tr -d '"')
+        
+        # Add row to table
+        echo "| **$language** | $count |" >> "$OUTPUT_FILE"
+      fi
+    done
+  else
+    # No languages detected, add a placeholder row
+    echo "| **No language data available** | - |" >> "$OUTPUT_FILE"
+  fi
 fi
 
 # Add language usage trends with theme awareness
