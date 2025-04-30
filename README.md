@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: April 29, 2025
+Last updated: April 30, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -32,7 +32,7 @@ Last updated: April 29, 2025
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-04-23 | 3 |
 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-04-26 | 0 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
-| [um5r-brain-tumor-detection](https://github.com/zelhajou/um5r-brain-tumor-detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-28 | 0 |
+| [um5r_dl_brain_tumor_detection](https://github.com/zelhajou/um5r_dl_brain_tumor_detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-29 | 0 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 |
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-04-24 | 4 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 |
@@ -44,7 +44,7 @@ Last updated: April 29, 2025
 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-02-24 | 3 |
 | [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 |
 | [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
-| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-04-20 | 18 |
+| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-04-29 | 18 |
 | [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-02-03 | 2 |
 | [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-02-03 | 5 |
 | [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2025-04-24 | 9 |
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: April 29, 2025</small></div>
+<div align="center"><small>Last updated: April 30, 2025</small></div>
