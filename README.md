@@ -22,11 +22,11 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: May 24, 2025
+Last updated: May 25, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
-| [product-dashboard](https://github.com/zelhajou/product-dashboard) | *No description* ![](https://img.shields.io/badge/-TypeScript-blue) | 2025-05-22 | 2025-05-23 | 0 |
+| [product-dashboard](https://github.com/zelhajou/product-dashboard) | A  modern product management dashboard built with React, TypeScript, and Tailwind CSS. ![](https://img.shields.io/badge/-TypeScript-blue) | 2025-05-22 | 2025-05-24 | 0 |
 | [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 |
 | [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-04-26 | 0 |
 | [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2025-04-28 | 2 |
@@ -57,9 +57,9 @@ Last updated: May 24, 2025
     <tr>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-40-blue?style=for-the-badge&color=3498db">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-40-blue?style=for-the-badge&color=3498db">
-          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-40-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-39-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-39-blue?style=for-the-badge&color=3498db">
+          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-39-blue?style=for-the-badge&color=3498db">
         </picture>
       </td>
       <td align="center">
@@ -71,9 +71,9 @@ Last updated: May 24, 2025
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-15-red?style=for-the-badge&color=e74c3c">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-15-red?style=for-the-badge&color=e74c3c">
-          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-15-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-14-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-14-red?style=for-the-badge&color=e74c3c">
+          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-14-red?style=for-the-badge&color=e74c3c">
         </picture>
       </td>
     </tr>
@@ -129,21 +129,21 @@ Language composition across all repositories:
 <tr>
 <td align="center"><strong>Makefile</strong></td>
 <td align="center"><strong>JavaScript</strong></td>
-<td align="center"><strong>Python</strong></td>
 <td align="center"><strong>Dockerfile</strong></td>
+<td align="center"><strong>Shell</strong></td>
+<td align="center"><strong>Python</strong></td>
 <td align="center"><strong>CSS</strong></td>
 <td align="center"><strong>C</strong></td>
-<td align="center"><strong>Shell</strong></td>
 <td align="center"><strong>HTML</strong></td>
 </tr>
 <tr>
-<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(9 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(10 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-JavaScript-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>JavaScript<br>(6 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=docker" alt="Dockerfile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Dockerfile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Dockerfile<br>(6 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(5 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Python" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Python-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Python<br>(5 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=docker" alt="Dockerfile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Dockerfile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Dockerfile<br>(5 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=css" alt="CSS" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-CSS-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>CSS<br>(5 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=c" alt="C" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C<br>(5 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(4 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-HTML-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>HTML<br>(4 repos)</td>
 </tr>
 <tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: May 24, 2025</small></div>
+<div align="center"><small>Last updated: May 25, 2025</small></div>
