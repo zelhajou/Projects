@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 174 | Following: 189
+- 👥 Followers: 174 | Following: 190
 
 ## Public Repositories (Newest First)
 
-Last updated: June 05, 2025
+Last updated: June 06, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: June 05, 2025</small></div>
+<div align="center"><small>Last updated: June 06, 2025</small></div>
