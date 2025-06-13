@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 174 | Following: 190
+- 👥 Followers: 175 | Following: 190
 
 ## Public Repositories (Newest First)
 
-Last updated: June 12, 2025
+Last updated: June 13, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -37,7 +37,7 @@ Last updated: June 12, 2025
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 |
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-04-24 | 4 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 |
-| [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-06-10 | 4 |
+| [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-06-12 | 3 |
 | [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-06-06 | 41 |
 | [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-03-05 | 3 |
 | [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-05-14 | 5 |
@@ -45,7 +45,7 @@ Last updated: June 12, 2025
 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-02-24 | 3 |
 | [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 |
 | [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
-| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-06-02 | 20 |
+| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-06-12 | 21 |
 | [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-02-03 | 2 |
 | [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-02-03 | 5 |
 | [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2025-06-04 | 10 |
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: June 12, 2025</small></div>
+<div align="center"><small>Last updated: June 13, 2025</small></div>
