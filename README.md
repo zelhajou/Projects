@@ -9,7 +9,7 @@
     <img src="https://avatars.githubusercontent.com/u/39954629?v=4" width="200" height="200" style="border-radius:50%">
   </picture>
   <h3>Zakaria Elhajoui</h3>
-  <p>Full-stack engineer focused on building scalable applications and robust software systems with modern technologies</p>
+  <p></p>
   
   [![GitHub followers](https://img.shields.io/github/followers/zelhajou?style=social)](https://github.com/zelhajou)
   [![Twitter: zelhajou](https://img.shields.io/twitter/follow/zelhajou?style=social)](https://twitter.com/zelhajou)
@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 176 | Following: 190
+- 👥 Followers: 175 | Following: 191
 
 ## Public Repositories (Newest First)
 
-Last updated: June 24, 2025
+Last updated: June 25, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: June 24, 2025</small></div>
+<div align="center"><small>Last updated: June 25, 2025</small></div>
