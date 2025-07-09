@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 179 | Following: 193
+- 👥 Followers: 178 | Following: 193
 
 ## Public Repositories (Newest First)
 
-Last updated: July 08, 2025
+Last updated: July 09, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -30,7 +30,7 @@ Last updated: July 08, 2025
 | [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 |
 | [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-06-02 | 0 |
 | [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2025-04-28 | 2 |
-| [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-04-23 | 3 |
+| [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-07-08 | 4 |
 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-04-26 | 0 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
 | [um5r_dl_brain_tumor_detection](https://github.com/zelhajou/um5r_dl_brain_tumor_detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-29 | 0 |
@@ -80,9 +80,9 @@ Last updated: July 08, 2025
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-121-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-121-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-121-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: July 08, 2025</small></div>
+<div align="center"><small>Last updated: July 09, 2025</small></div>
