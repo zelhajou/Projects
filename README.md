@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: July 16, 2025
+Last updated: July 17, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -31,7 +31,7 @@ Last updated: July 16, 2025
 | [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-06-02 | 0 |
 | [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2025-04-28 | 2 |
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-07-08 | 4 |
-| [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-04-26 | 0 |
+| [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-07-16 | 1 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
 | [um5r_dl_brain_tumor_detection](https://github.com/zelhajou/um5r_dl_brain_tumor_detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-29 | 0 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 |
@@ -47,7 +47,7 @@ Last updated: July 16, 2025
 | [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
 | [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2025-06-12 | 21 |
 | [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-02-03 | 2 |
-| [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-02-03 | 5 |
+| [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-07-16 | 5 |
 | [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2025-07-09 | 12 |
 
 ## Repository Statistics
@@ -80,9 +80,9 @@ Last updated: July 16, 2025
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: July 16, 2025</small></div>
+<div align="center"><small>Last updated: July 17, 2025</small></div>
