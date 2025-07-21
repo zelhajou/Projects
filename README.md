@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: July 20, 2025
+Last updated: July 21, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -41,7 +41,7 @@ Last updated: July 20, 2025
 | [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-07-15 | 39 |
 | [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-03-05 | 3 |
 | [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-05-14 | 5 |
-| [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-05-28 | 9 |
+| [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-07-20 | 8 |
 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-02-24 | 3 |
 | [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 |
 | [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
@@ -80,9 +80,9 @@ Last updated: July 20, 2025
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: July 20, 2025</small></div>
+<div align="center"><small>Last updated: July 21, 2025</small></div>
