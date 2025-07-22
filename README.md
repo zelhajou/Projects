@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 180 | Following: 196
+- 👥 Followers: 181 | Following: 196
 
 ## Public Repositories (Newest First)
 
-Last updated: July 21, 2025
+Last updated: July 22, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -35,7 +35,7 @@ Last updated: July 21, 2025
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
 | [um5r_dl_brain_tumor_detection](https://github.com/zelhajou/um5r_dl_brain_tumor_detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-29 | 0 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-01-31 | 0 |
-| [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-04-24 | 4 |
+| [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-07-21 | 5 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 |
 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-06-12 | 3 |
 | [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-07-15 | 39 |
@@ -80,9 +80,9 @@ Last updated: July 21, 2025
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-122-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-123-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: July 21, 2025</small></div>
+<div align="center"><small>Last updated: July 22, 2025</small></div>
