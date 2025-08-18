@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 180 | Following: 199
+- 👥 Followers: 179 | Following: 199
 
 ## Public Repositories (Newest First)
 
-Last updated: August 17, 2025
+Last updated: August 18, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -57,9 +57,9 @@ Last updated: August 17, 2025
     <tr>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
-          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
+          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
         </picture>
       </td>
       <td align="center">
@@ -71,9 +71,9 @@ Last updated: August 17, 2025
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-20-red?style=for-the-badge&color=e74c3c">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-20-red?style=for-the-badge&color=e74c3c">
-          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-20-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-19-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-19-red?style=for-the-badge&color=e74c3c">
+          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-19-red?style=for-the-badge&color=e74c3c">
         </picture>
       </td>
     </tr>
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: August 17, 2025</small></div>
+<div align="center"><small>Last updated: August 18, 2025</small></div>
