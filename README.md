@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: September 18, 2025
+Last updated: September 19, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -34,11 +34,11 @@ Last updated: September 18, 2025
 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-07-16 | 1 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2025-04-18 | 2 |
 | [um5r_dl_brain_tumor_detection](https://github.com/zelhajou/um5r_dl_brain_tumor_detection) | Deep learning system for brain tumor detection in MRI scans using CNN architecture. ![](https://img.shields.io/badge/-Jupyter Notebook-gray) | 2024-10-07 | 2025-04-29 | 0 |
-| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-08-25 | 1 |
+| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-09-18 | 1 |
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-08-25 | 6 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-03-24 | 5 |
 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-08-19 | 3 |
-| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-08-01 | 38 |
+| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-09-18 | 38 |
 | [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-03-05 | 3 |
 | [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-05-14 | 5 |
 | [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-09-01 | 7 |
@@ -134,22 +134,22 @@ Language composition across all repositories:
 <td align="center"><strong>Python</strong></td>
 <td align="center"><strong>HTML</strong></td>
 <td align="center"><strong>TypeScript</strong></td>
-<td align="center"><strong>Jupyter Notebook</strong></td>
+<td align="center"><strong>Shell</strong></td>
 </tr>
 <tr>
-<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(6 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(7 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-JavaScript-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>JavaScript<br>(6 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=docker" alt="Dockerfile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Dockerfile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Dockerfile<br>(5 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=css" alt="CSS" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-CSS-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>CSS<br>(4 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Python" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Python-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Python<br>(3 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-HTML-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>HTML<br>(3 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=css" alt="CSS" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-CSS-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>CSS<br>(5 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Python" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Python-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Python<br>(4 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-HTML-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>HTML<br>(4 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-TypeScript-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>TypeScript<br>(2 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Jupyter Notebook" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Jupyter Notebook-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Jupyter Notebook<br>(2 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(2 repos)</td>
 </tr>
 <tr>
-<td align="center"><strong>C</strong></td>
-<td align="center"><strong>Shell</strong></td>
+<td align="center"><strong>Jupyter Notebook</strong></td>
 <td align="center"><strong>C++</strong></td>
+<td align="center"><strong>C</strong></td>
 <td></td>
 <td></td>
 <td></td>
@@ -157,9 +157,9 @@ Language composition across all repositories:
 <td></td>
 </tr>
 <tr>
+<td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Jupyter Notebook" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Jupyter Notebook-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Jupyter Notebook<br>(2 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cpp" alt="C++" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C++-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C++<br>(2 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=c" alt="C" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C<br>(2 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(1 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=cpp" alt="C++" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C++-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C++<br>(1 repos)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -184,8 +184,8 @@ Language composition across all repositories:
 </div>
 
 ## Collaboration Stats
-- 👥 **Total contributors across all repositories:** 31
-- 🤝 **Most collaborative project:** [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) with 3 contributors
+- 👥 **Total contributors across all repositories:** 30
+- 🤝 **Most collaborative project:** [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) with 3 contributors
 
 ## Commit Activity
 
@@ -208,4 +208,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: September 18, 2025</small></div>
+<div align="center"><small>Last updated: September 19, 2025</small></div>
