@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: December 05, 2025
+Last updated: December 06, 2025
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -37,7 +37,7 @@ Last updated: December 05, 2025
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-09-25 | 5 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2025-10-15 | 5 |
 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-10-30 | 2 |
-| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-11-26 | 38 |
+| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2025-12-05 | 38 |
 | [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-10-03 | 2 |
 | [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-10-03 | 4 |
 | [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-09-01 | 7 |
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: December 05, 2025</small></div>
+<div align="center"><small>Last updated: December 06, 2025</small></div>
