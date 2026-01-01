@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: December 31, 2025
+Last updated: January 01, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -94,8 +94,8 @@ Last updated: December 31, 2025
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
 - 🆕 **Most recent repository:** [web-product-dashboard](https://github.com/zelhajou/web-product-dashboard) created on 2025-05-22
-- 🎂 **GitHub account age:** Approximately 7 years (created on 2018-06-05)
-- 📊 **Average creation rate:** 3.4
+- 🎂 **GitHub account age:** Approximately 8 years (created on 2018-06-05)
+- 📊 **Average creation rate:** 3.0
 
 ### Contribution Activity
 
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: December 31, 2025</small></div>
+<div align="center"><small>Last updated: January 01, 2026</small></div>
