@@ -18,18 +18,18 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 184 | Following: 204
+- 👥 Followers: 184 | Following: 205
 
 ## Public Repositories (Newest First)
 
-Last updated: February 02, 2026
+Last updated: February 03, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
 | [web-product-dashboard](https://github.com/zelhajou/web-product-dashboard) | A  modern product management dashboard built with React, TypeScript, and Tailwind CSS. ![](https://img.shields.io/badge/-TypeScript-blue) | 2025-05-22 | 2025-07-14 | 0 |
 | [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 |
 | [web-instagram-follow-manager](https://github.com/zelhajou/web-instagram-follow-manager) | A Docker-based tool for automatically canceling pending Instagram follow requests in bulk. Suppor... ![](https://img.shields.io/badge/-Python-blue) | 2025-03-27 | 2025-06-02 | 0 |
-| [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2025-12-12 | 3 |
+| [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-02-02 | 3 |
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-07-08 | 4 |
 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-12-26 | 2 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2026-01-25 | 2 |
@@ -183,7 +183,7 @@ Language composition across all repositories:
 </div>
 
 ## Collaboration Stats
-- 👥 **Total contributors across all repositories:** 30
+- 👥 **Total contributors across all repositories:** 31
 - 🤝 **Most collaborative project:** [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) with 3 contributors
 
 ## Commit Activity
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: February 02, 2026</small></div>
+<div align="center"><small>Last updated: February 03, 2026</small></div>
