@@ -18,11 +18,11 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 184 | Following: 205
+- 👥 Followers: 184 | Following: 206
 
 ## Public Repositories (Newest First)
 
-Last updated: February 14, 2026
+Last updated: February 15, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -37,7 +37,7 @@ Last updated: February 14, 2026
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-12-20 | 5 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2026-01-15 | 7 |
 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-10-30 | 2 |
-| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2026-01-08 | 37 |
+| [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) | A custom shell program emulating basic bash functionalities ![](https://img.shields.io/badge/-C-gray) | 2024-02-03 | 2026-02-15 | 38 |
 | [ft_unix_philosophers](https://github.com/zelhajou/ft_unix_philosophers) | Simulation of the Dining Philosophers problem using threads and mutexes ![](https://img.shields.io/badge/-C-gray) | 2024-01-03 | 2025-10-03 | 2 |
 | [ft_gfx_fractol](https://github.com/zelhajou/ft_gfx_fractol) | Renders Julia and Mandelbrot fractals ![](https://img.shields.io/badge/-C-gray) | 2023-12-18 | 2025-10-03 | 4 |
 | [ft_unix_minitalk](https://github.com/zelhajou/ft_unix_minitalk) | A communication program that uses UNIX signals to exchange data between a client and a server. ![](https://img.shields.io/badge/-C-gray) | 2023-11-06 | 2025-12-15 | 8 |
@@ -79,9 +79,9 @@ Last updated: February 14, 2026
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-126-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-126-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-126-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -89,7 +89,7 @@ Last updated: February 14, 2026
 </div>
 
 ### Notable Repositories
-- 🌟 **Most starred:** [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) with 37 stars
+- 🌟 **Most starred:** [ft_unix_minishell](https://github.com/zelhajou/ft_unix_minishell) with 38 stars
 
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: February 14, 2026</small></div>
+<div align="center"><small>Last updated: February 15, 2026</small></div>
