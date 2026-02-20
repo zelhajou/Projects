@@ -22,7 +22,7 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: February 19, 2026
+Last updated: February 20, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
@@ -33,7 +33,7 @@ Last updated: February 19, 2026
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2025-07-08 | 4 |
 | [web-hotel-price-tracker](https://github.com/zelhajou/web-hotel-price-tracker) | A robust hotel price tracking system that scrapes Kayak.com for detailed hotel information, inclu... ![](https://img.shields.io/badge/-Python-blue) | 2024-12-30 | 2025-12-26 | 2 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2026-01-25 | 2 |
-| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2025-12-20 | 0 |
+| [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2026-02-19 | 1 |
 | [ft_sys_inception](https://github.com/zelhajou/ft_sys_inception) | Docker-based system setup and configuration ![](https://img.shields.io/badge/-Shell-gray) | 2024-05-21 | 2025-12-20 | 5 |
 | [ft_gfx_cube3d](https://github.com/zelhajou/ft_gfx_cube3d) | 3D maze using raycasting ![](https://img.shields.io/badge/-C-gray) | 2024-04-18 | 2026-01-15 | 7 |
 | [ft_cpp_modules](https://github.com/zelhajou/ft_cpp_modules) | Progressive C++ exercises covering OOP, memory management, inheritance, templates, exceptions, an... ![](https://img.shields.io/badge/-C++-green) | 2024-03-14 | 2025-10-30 | 2 |
@@ -79,9 +79,9 @@ Last updated: February 19, 2026
     <tr>
       <td align="center" colspan="3">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
-          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-127-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Stars-128-yellow?style=for-the-badge&color=f1c40f">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Stars-128-yellow?style=for-the-badge&color=f1c40f">
+          <img alt="Total Stars" src="https://img.shields.io/badge/Total%20Stars-128-yellow?style=for-the-badge&color=f1c40f">
         </picture>
       </td>
     </tr>
@@ -207,4 +207,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: February 19, 2026</small></div>
+<div align="center"><small>Last updated: February 20, 2026</small></div>
