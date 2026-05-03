@@ -12,21 +12,21 @@
   <p></p>
   
   [![GitHub followers](https://img.shields.io/github/followers/zelhajou?style=social)](https://github.com/zelhajou)
-  [![Twitter: zelhajou](https://img.shields.io/twitter/follow/zelhajou?style=social)](https://twitter.com/zelhajou)
+  [![Twitter: aaaikrz](https://img.shields.io/twitter/follow/aaaikrz?style=social)](https://twitter.com/aaaikrz)
 </div>
 
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 186 | Following: 211
+- 👥 Followers: 186 | Following: 212
 
 ## Public Repositories (Newest First)
 
-Last updated: May 02, 2026
+Last updated: May 03, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
-| [SukStack](https://github.com/zelhajou/SukStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2025-04-22 | 2 |
+| [DevStack](https://github.com/zelhajou/DevStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2026-05-02 | 2 |
 | [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-02-02 | 3 |
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2026-04-08 | 3 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2026-01-25 | 2 |
@@ -90,7 +90,7 @@ Last updated: May 02, 2026
 
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
-- 🆕 **Most recent repository:** [SukStack](https://github.com/zelhajou/SukStack) created on 2025-04-07
+- 🆕 **Most recent repository:** [DevStack](https://github.com/zelhajou/DevStack) created on 2025-04-07
 - 🎂 **GitHub account age:** Approximately 8 years (created on 2018-06-05)
 - 📊 **Average creation rate:** 2.5
 
@@ -199,9 +199,9 @@ Language composition across all repositories:
 
 ### Connect With Me
 
-[![Twitter](https://img.shields.io/badge/X-%23121011.svg?logo=x&logoColor=white)](https://x.com/zelhajou) 
+[![Twitter](https://img.shields.io/badge/X-%23121011.svg?logo=x&logoColor=white)](https://x.com/aaaikrz) 
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/zelhajou) 
 </div>
 
 
-<div align="center"><small>Last updated: May 02, 2026</small></div>
+<div align="center"><small>Last updated: May 03, 2026</small></div>
