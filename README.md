@@ -22,11 +22,11 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: May 03, 2026
+Last updated: May 04, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
-| [DevStack](https://github.com/zelhajou/DevStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2026-05-02 | 2 |
+| [DevStack](https://github.com/zelhajou/DevStack) | A comprehensive index of development tools and technologies across the entire ecosystem. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-04-07 | 2026-05-03 | 2 |
 | [web-42term](https://github.com/zelhajou/web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-02-02 | 3 |
 | [web-pmerge-me-visualizer](https://github.com/zelhajou/web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2026-04-08 | 3 |
 | [web-42recall](https://github.com/zelhajou/web-42recall) | A spaced repetition flashcard application designed specifically for 42 School students to enhance... ![](https://img.shields.io/badge/-TypeScript-blue) | 2024-10-24 | 2026-01-25 | 2 |
@@ -53,9 +53,9 @@ Last updated: May 03, 2026
     <tr>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
-          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-45-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
+          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-44-blue?style=for-the-badge&color=3498db">
         </picture>
       </td>
       <td align="center">
@@ -67,9 +67,9 @@ Last updated: May 03, 2026
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-25-red?style=for-the-badge&color=e74c3c">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-25-red?style=for-the-badge&color=e74c3c">
-          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-25-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
+          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
         </picture>
       </td>
     </tr>
@@ -204,4 +204,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: May 03, 2026</small></div>
+<div align="center"><small>Last updated: May 04, 2026</small></div>
