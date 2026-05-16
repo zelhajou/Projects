@@ -18,16 +18,16 @@
 ## About Me
 - 📍 Location: Salé, Morocco
 - 🔗 Website: []()
-- 👥 Followers: 186 | Following: 212
+- 👥 Followers: 186 | Following: 213
 
 ## Public Repositories (Newest First)
 
-Last updated: May 15, 2026
+Last updated: May 16, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
-| [marketplace-docs](https://github.com/zelhajou/marketplace-docs) | *No description* ![](https://img.shields.io/badge/-MDX-gray) | 2026-05-12 | 2026-05-13 | 0 |
-| [projects](https://github.com/zelhajou/projects) | Showcase of my GitHub repositories with detailed statistics, language breakdowns, and project met... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2026-05-14 | 1 |
+| [domain-tab-grouper](https://github.com/zelhajou/domain-tab-grouper) | Automatic tab grouping by domain for Brave/Chrome/Edge — MV3 extension with smart normalization, ... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2026-05-15 | 2026-05-15 | 0 |
+| [projects](https://github.com/zelhajou/projects) | Showcase of my GitHub repositories with detailed statistics, language breakdowns, and project met... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2026-05-15 | 1 |
 | [ft_web-42term](https://github.com/zelhajou/ft_web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-05-04 | 3 |
 | [ft_web-pmerge-me-visualizer](https://github.com/zelhajou/ft_web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2026-05-04 | 3 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2026-02-19 | 1 |
@@ -53,9 +53,9 @@ Last updated: May 15, 2026
     <tr>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-42-blue?style=for-the-badge&color=3498db">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-42-blue?style=for-the-badge&color=3498db">
-          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-42-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Total%20Repositories-43-blue?style=for-the-badge&color=3498db">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Total%20Repositories-43-blue?style=for-the-badge&color=3498db">
+          <img alt="Total Repositories" src="https://img.shields.io/badge/Total%20Repositories-43-blue?style=for-the-badge&color=3498db">
         </picture>
       </td>
       <td align="center">
@@ -67,9 +67,9 @@ Last updated: May 15, 2026
       </td>
       <td align="center">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-23-red?style=for-the-badge&color=e74c3c">
-          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-23-red?style=for-the-badge&color=e74c3c">
-          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-23-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
+          <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
+          <img alt="Private Repositories" src="https://img.shields.io/badge/Private%20Repositories-24-red?style=for-the-badge&color=e74c3c">
         </picture>
       </td>
     </tr>
@@ -90,7 +90,7 @@ Last updated: May 15, 2026
 
 ### Repository Timeline
 - 📅 **First repository:** [ft_core_libft](https://github.com/zelhajou/ft_core_libft) created on 2022-10-17
-- 🆕 **Most recent repository:** [marketplace-docs](https://github.com/zelhajou/marketplace-docs) created on 2026-05-12
+- 🆕 **Most recent repository:** [domain-tab-grouper](https://github.com/zelhajou/domain-tab-grouper) created on 2026-05-15
 - 🎂 **GitHub account age:** Approximately 8 years (created on 2018-06-05)
 - 📊 **Average creation rate:** 2.3
 
@@ -125,42 +125,22 @@ Language composition across all repositories:
 <tr>
 <td align="center"><strong>JavaScript</strong></td>
 <td align="center"><strong>CSS</strong></td>
-<td align="center"><strong>Makefile</strong></td>
 <td align="center"><strong>Shell</strong></td>
 <td align="center"><strong>HTML</strong></td>
-<td align="center"><strong>C</strong></td>
-<td align="center"><strong>TypeScript</strong></td>
+<td align="center"><strong>Makefile</strong></td>
 <td align="center"><strong>Python</strong></td>
+<td align="center"><strong>C++</strong></td>
+<td align="center"><strong>C</strong></td>
 </tr>
 <tr>
 <td align="center"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-JavaScript-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>JavaScript<br>(4 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=css" alt="CSS" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-CSS-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>CSS<br>(4 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(3 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(2 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-HTML-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>HTML<br>(2 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=c" alt="C" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C<br>(2 repos)</td>
-<td align="center"><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-TypeScript-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>TypeScript<br>(1 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=bash" alt="Shell" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Shell-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Shell<br>(3 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=html" alt="HTML" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-HTML-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>HTML<br>(3 repos)</td>
+<td align="center"><img src="https://skillicons.dev/icons?i=cmake" alt="Makefile" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Makefile-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Makefile<br>(2 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=py" alt="Python" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-Python-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>Python<br>(1 repos)</td>
-</tr>
-<tr>
-<td align="center"><strong>MDX</strong></td>
-<td align="center"><strong>C++</strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td align="center"><img src="https://skillicons.dev/icons?i=mdx" alt="MDX" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-MDX-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>MDX<br>(1 repos)</td>
 <td align="center"><img src="https://skillicons.dev/icons?i=cpp" alt="C++" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C++-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C++<br>(1 repos)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center"><img src="https://skillicons.dev/icons?i=c" alt="C" onerror="this.onerror=null; this.src='https://img.shields.io/badge/-C-gray?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjQgMjQnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTEyIDIxLjM1bC0xLjQ1LTEuMzJDNS40IDE1LjM2IDIgMTIuMjggMiA4LjUgMiA1LjQyIDQuNDIgMyA3LjUgM2MxLjc0IDAgMy40MS44MSA0LjUgMi4wOUMxMy4wOSAzLjgxIDE0Ljc2IDMgMTYuNSAzIDE5LjU4IDMgMjIgNS40MiAyMiA4LjVjMCAzLjc4LTMuNCA2Ljg2LTguNTUgMTEuNTRMMTIgMjEuMzV6Jy8+PC9zdmc+';"/><br>C<br>(1 repos)</td>
 </tr>
 </table>
 
@@ -204,4 +184,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: May 15, 2026</small></div>
+<div align="center"><small>Last updated: May 16, 2026</small></div>
