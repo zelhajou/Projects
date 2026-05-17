@@ -22,12 +22,12 @@
 
 ## Public Repositories (Newest First)
 
-Last updated: May 16, 2026
+Last updated: May 17, 2026
 
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
 | [domain-tab-grouper](https://github.com/zelhajou/domain-tab-grouper) | Automatic tab grouping by domain for Brave/Chrome/Edge — MV3 extension with smart normalization, ... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2026-05-15 | 2026-05-15 | 0 |
-| [projects](https://github.com/zelhajou/projects) | Showcase of my GitHub repositories with detailed statistics, language breakdowns, and project met... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2026-05-15 | 1 |
+| [projects](https://github.com/zelhajou/projects) | Showcase of my GitHub repositories with detailed statistics, language breakdowns, and project met... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2026-05-16 | 1 |
 | [ft_web-42term](https://github.com/zelhajou/ft_web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-05-04 | 3 |
 | [ft_web-pmerge-me-visualizer](https://github.com/zelhajou/ft_web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2026-05-04 | 3 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2026-02-19 | 1 |
@@ -184,4 +184,4 @@ Language composition across all repositories:
 </div>
 
 
-<div align="center"><small>Last updated: May 16, 2026</small></div>
+<div align="center"><small>Last updated: May 17, 2026</small></div>
