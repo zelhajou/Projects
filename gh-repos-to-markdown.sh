@@ -34,7 +34,7 @@ safe_division() {
 OUTPUT_FILE="github_repositories_complete.md"
 
 # Repositories to ignore (space-separated list)
-IGNORED_REPOS="zelhajou Projects"
+IGNORED_REPOS="zelhajou Projects projects ft_cursus"
 
 # Set initial variables
 PUBLIC_COUNT=0
