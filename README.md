@@ -27,7 +27,6 @@ Last updated: May 18, 2026
 | Repository | Description | Created | Last Updated | Stars |
 |------------|-------------|---------|-------------|-------|
 | [domain-tab-grouper](https://github.com/zelhajou/domain-tab-grouper) | Automatic tab grouping by domain for Brave/Chrome/Edge — MV3 extension with smart normalization, ... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2026-05-15 | 2026-05-15 | 0 |
-| [projects](https://github.com/zelhajou/projects) | Showcase of my GitHub repositories with detailed statistics, language breakdowns, and project met... ![](https://img.shields.io/badge/-Shell-gray) | 2025-04-26 | 2026-05-17 | 1 |
 | [ft_web-42term](https://github.com/zelhajou/ft_web-42term) | Terminal-style widgets that showcase 42 students' profiles, projects, and skills. Generate beauti... ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-27 | 2026-05-04 | 3 |
 | [ft_web-pmerge-me-visualizer](https://github.com/zelhajou/ft_web-pmerge-me-visualizer) | A web application that visualizes the Ford-Johnson (merge-insert) sorting algorithm  ![](https://img.shields.io/badge/-JavaScript-yellow) | 2025-03-05 | 2026-05-04 | 3 |
 | [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) | HTTP/1.1 web server supporting GET, POST, and DELETE requests ![](https://img.shields.io/badge/-C++-green) | 2024-07-03 | 2026-02-19 | 1 |
@@ -41,7 +40,6 @@ Last updated: May 18, 2026
 | [ft_algo_push_swap](https://github.com/zelhajou/ft_algo_push_swap) | A program that sorts a stack of numbers using a minimal set of operations ![](https://img.shields.io/badge/-C-gray) | 2023-09-29 | 2025-10-03 | 2 |
 | [ft_core_gnl](https://github.com/zelhajou/ft_core_gnl) | A function that reads a file line-by-line ![](https://img.shields.io/badge/-C-gray) | 2023-05-19 | 2025-01-31 | 0 |
 | [ft_sys_born2beroot](https://github.com/zelhajou/ft_sys_born2beroot) | A project on Virtualization basics ![](https://img.shields.io/badge/-Shell-gray) | 2023-04-18 | 2025-01-31 | 0 |
-| [ft_cursus](https://github.com/zelhajou/ft_cursus) | Software engineering portfolio showcasing my journey through 42's project-based curriculum. ![](https://img.shields.io/badge/-JavaScript-yellow) | 2023-03-28 | 2026-02-22 | 22 |
 | [ft_core_printf](https://github.com/zelhajou/ft_core_printf) | A function that mimics the behavior of the C library printf function ![](https://img.shields.io/badge/-C-gray) | 2022-12-01 | 2025-10-03 | 1 |
 | [ft_piscine_c](https://github.com/zelhajou/ft_piscine_c) | Code developed at 42's Piscine, a 26-day (straight) C bootcamp  ![](https://img.shields.io/badge/-C-gray) | 2022-10-18 | 2025-10-03 | 4 |
 | [ft_core_libft](https://github.com/zelhajou/ft_core_libft) | A library of useful C functions ![](https://img.shields.io/badge/-C-gray) | 2022-10-17 | 2026-01-27 | 18 |
@@ -160,7 +158,7 @@ Language composition across all repositories:
 </div>
 
 ## Collaboration Stats
-- 👥 **Total contributors across all repositories:** 28
+- 👥 **Total contributors across all repositories:** 25
 - 🤝 **Most collaborative project:** [ft_net_webserv](https://github.com/zelhajou/ft_net_webserv) with 3 contributors
 
 ## Commit Activity
